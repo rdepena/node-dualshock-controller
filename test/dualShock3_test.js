@@ -13,5 +13,4 @@ var dualShock3_test = {
 		test.done();
 	}
 };
-util.inherits(controller, events.EventEmitter);
 module.exports = dualShock3_test;
