@@ -1,6 +1,6 @@
 {
   "name": "dualshock-controller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node library for dual shock controllers",
   "main": "index.js",
   "directories": {
@@ -20,6 +20,7 @@
   "scripts": {
     "test": "grunt test"
   },
+  "main": "./lib/dualshock3.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rdepena/node-dualshock-controller.git"
