@@ -1,9 +1,10 @@
 {
-  "name": "node-dualshock-controller",
+  "name": "dualshock-controller",
   "version": "0.0.1",
   "description": "node library for dual shock controllers",
   "main": "index.js",
   "directories": {
+    "example": "examples",
     "test": "test"
   },
   "dependencies": {
@@ -19,7 +20,20 @@
   "scripts": {
     "test": "grunt test"
   },
-  "repository": "",
-  "author": "rdepena",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdepena/node-dualshock-controller.git"
+  },
+  "author": "ricardo de pena",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "ec07ab438dd6cd129000b285f33d8be7c59342b6",
+  "keywords": [
+    "ps3",
+    "controller",
+    "gamepad",
+    "dualshock",
+    "dualshock3",
+    "node-hid"
+  ]
 }
