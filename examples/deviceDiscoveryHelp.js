@@ -1,5 +1,5 @@
 (function () {
-	var HID = require('node-hid')
+	var HID = require('node-hid');
 	console.log(HID.devices());
 
 	//var controller = new HID.HID(4797, 53269);
@@ -9,7 +9,7 @@
 			console.log(key + " " + data[key]);
 		}
 		controller.read(processData);
-	};
+	}
 	//controller.read(processData);
 
 }());

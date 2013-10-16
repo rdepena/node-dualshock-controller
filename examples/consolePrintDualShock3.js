@@ -21,11 +21,11 @@
 	});
 
 	function pressed (data) {
-		console.log(data : "pressed");
-	};
+		console.log(data + ": pressed");
+	}
 	function released (data) {
-		console.log(data : "released");
-	};
+		console.log(data + ": released");
+	}
 	//subscribe to all the buttons:
 	for (var button in controllerConfiguration.buttons) {
 		this.controller.on(button + ":pressed", pressed);

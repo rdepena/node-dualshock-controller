@@ -1,7 +1,7 @@
 var files = ['gruntfile.js',
 				'lib/*.js',
 				'test/*.js',
-				'examples/*,js'];
+				'examples/*.js'];
 module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
