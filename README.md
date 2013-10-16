@@ -1,7 +1,7 @@
 node-dualshock-controller
 =========================
 
-`node-dualshock-controller` is a node library that exposes events from a ps3 dualshock controller connected.
+`dualshock-controller` is a node library that exposes events from a ps3 dualshock controller connected.
 
 ## Installation command:
 
