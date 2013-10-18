@@ -3,9 +3,17 @@ node-dualshock-controller
 
 `dualshock-controller` is a node library that exposes events from a ps3 dualshock controller connected.
 
-## Installation command:
+## Installation:
+
+### Linux Requirements:
+    
+    * libudev-dev
+
+### Run npm command:
 
     $ npm install dualshock-controller
+    
+
     
 ## Guide 
 
