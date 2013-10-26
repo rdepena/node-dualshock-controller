@@ -9,7 +9,7 @@
 		console.log(data);
 	});
 	dualShock3.on('right:move', function(data) {
-		console.log('left Moved');
+		console.log('right Moved');
 		console.log(data);
 	});
 	dualShock3.on('connect', function(data) {
