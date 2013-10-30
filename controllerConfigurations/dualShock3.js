@@ -72,6 +72,10 @@ var conrollerConfiguration = {
 		"dpadLeft":{	
 			"buttonBlock": 2,
 			"buttonValue": 0x80
+		},
+		"psxButton":{
+			"buttonBlock":4,
+			"buttonValue": 0x01
 		}
 	}
 }
