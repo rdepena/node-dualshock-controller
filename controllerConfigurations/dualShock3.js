@@ -69,7 +69,7 @@ var conrollerConfiguration = {
 			"buttonBlock": 2,
 			"buttonValue" : 0x40
 		},
-		"dPadLeft":{	
+		"dpadLeft":{	
 			"buttonBlock": 2,
 			"buttonValue": 0x80
 		}
