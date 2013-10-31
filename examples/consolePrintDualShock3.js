@@ -26,10 +26,14 @@
 	function released (data) {
 		console.log(data + ": released");
 	}
+	function analog (data) {
+		console.log(data + ": analog")
+	}
 	//subscribe to all the buttons:
 	for (var button in controllerConfiguration.buttons) {
 		this.controller.on(button + ":pressed", pressed);
 		this.controller.on(button + ":release", released);
+		this.controller.on(button+":analog", analog);
 	}
 
 	//once everything is ready we call connect()

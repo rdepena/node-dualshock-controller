@@ -11,41 +11,50 @@ var conrollerConfiguration = {
 	"buttons" : {
 		"l2": {
 			"buttonBlock": 3,
-			"buttonValue": 0x01
+			"buttonValue": 0x01,
+			"analogPin" : 18
 		},
 		"r2":{
 			"buttonBlock": 3,
-			"buttonValue": 0x02
+			"buttonValue": 0x02,
+			"analogPin" : 19
 		},
 		"l1":{
 			"buttonBlock": 3,
-			"buttonValue": 0x04
+			"buttonValue": 0x04,
+			"analogPin" : 20
 		},
 		"r1":{
 			"buttonBlock": 3,
-			"buttonValue": 0x08
+			"buttonValue": 0x08,
+			"analogPin" : 21
 		},
 		"triangle":{
 			"buttonBlock": 3,
-			"buttonValue": 0x10
+			"buttonValue": 0x10,
+			"analogPin" : 22
 		},
 		"circle":{
 			"buttonBlock": 3,
-			"buttonValue": 0x20
+			"buttonValue": 0x20,
+			"analogPin" : 23
 		},
 		"x":{
 			"buttonBlock": 3,
-			"buttonValue": 0x40
+			"buttonValue": 0x40,
+			"analogPin" : 24
 		},
 		"square":{
 			"buttonBlock": 3,
-			"buttonValue": 0x80
+			"buttonValue": 0x80,
+			"analogPin": 25
+
 		},
 		"select":{
 			"buttonBlock": 2,
 			"buttonValue": 0x1
 		},
-		"leftAnalogBumb":{
+		"leftAnalogBump":{
 			"buttonBlock": 2,
 			"buttonValue": 0x2
 		},
@@ -59,19 +68,23 @@ var conrollerConfiguration = {
 		},
 		"dpadUp":{
 			"buttonBlock": 2,
-			"buttonValue": 0x10
+			"buttonValue": 0x10,
+			"analogPin": 14
 		},
 		"dpadRight":{
 			"buttonBlock": 2,
-			"buttonValue": 0x20
+			"buttonValue": 0x20,
+			"analogPin": 15
 		},
 		"dpadDown" : {
 			"buttonBlock": 2,
-			"buttonValue" : 0x40
+			"buttonValue" : 0x40,
+			"analogPin" : 16
 		},
 		"dpadLeft":{	
 			"buttonBlock": 2,
-			"buttonValue": 0x80
+			"buttonValue": 0x80,
+			"analogPin": 17
 		},
 		"psxButton":{
 			"buttonBlock":4,
