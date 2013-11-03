@@ -12,7 +12,7 @@
 		console.log('right Moved');
 		console.log(data);
 	});
-	dualShock3.on('connect', function(data) {
+	dualShock3.on('connected', function(data) {
 		console.log('connected');
 	});
 

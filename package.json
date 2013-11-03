@@ -1,6 +1,6 @@
 {
   "name": "dualshock-controller",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "node library for dual shock controllers",
   "main": "index.js",
   "directories": {
@@ -8,13 +8,14 @@
     "test": "test"
   },
   "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "node-hid": "~0.2.3",
-    "nodeunit": "~0.8.1"
+    "grunt": ">=0.4.1",
+    "grunt-cli": ">=0.1.9",
+    "grunt-contrib-jshint": ">=0.6.4",
+    "grunt-contrib-nodeunit": ">=0.2.1",
+    "grunt-contrib-watch": ">=0.5.3",
+    "node-hid": ">=0.2.3",
+    "nodeunit": ">=0.8.1",
+    "colors" : ">=0.6.2"
   },
   "devDependencies": {},
   "scripts": {

@@ -29,7 +29,7 @@ dualShock3.on('left:move', function(data) {
 dualShock3.on('right:move', function(data) {
   //...doStuff();
 });
-dualShock3.on('connect', function(data) {
+dualShock3.on('connected', function(data) {
   //...doStuff();
 });
 dualShock3.on('square:pressed', function (data) {
