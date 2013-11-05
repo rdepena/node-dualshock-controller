@@ -36,6 +36,9 @@
     "gamepad",
     "dualshock",
     "dualshock3",
+    "dualshock4",
+    "dual shock 3",
+    "dual shock 4",
     "node-hid"
   ]
 }
