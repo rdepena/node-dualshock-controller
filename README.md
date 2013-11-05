@@ -20,7 +20,16 @@ node-dualshock-controller
 ###Use the DualShock3 library
 
 ~~~~ js
-var dualShock3 = require('dualshock-controller');
+var dualShock = require('dualshock-controller');
+
+//as of version 0.2 you will need to init the controller
+var dualShock3 = dualShock();
+
+//this is because now you can use dualShock4 by passing the controller config file
+var dualShock4 = dualShock(
+	{
+		config: "dualshock4-generic-driver"
+	});
 
 //set event handlers:
 dualShock3.on('left:move', function(data) {
