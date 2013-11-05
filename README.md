@@ -17,7 +17,7 @@ node-dualshock-controller
     
 ## Guide 
 
-###Use the DualShock3 library
+###Use the DualShock library
 
 ~~~~ js
 var dualShock = require('dualshock-controller');
