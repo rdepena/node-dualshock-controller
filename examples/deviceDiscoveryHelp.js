@@ -2,7 +2,7 @@
 	var HID = require('node-hid');
 	console.log(HID.devices());
 
-	var controller = new HID.HID(1356, 1476);
+	var controller = new HID.HID(1356, 616);
 
 	function processData(err, data) {
 		for (var key in data) {
@@ -10,6 +10,7 @@
 		}
 		controller.read(processData);
 	}
-	controller.read(processData);
+	//controller.read(processData);
+	console.log(controller);
 
 }());
