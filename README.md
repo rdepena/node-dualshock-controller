@@ -31,7 +31,13 @@ var dualShock4 = dualShock(
 		config: "dualshock4-generic-driver"
 	});
 
-//set event handlers:
+
+//make sure you add an error event handler
+dualShock3.on('error', function(data) {
+  //...someStuffDidNotWork();
+});
+
+//add event handlers:
 dualShock3.on('left:move', function(data) {
   //...doStuff();
 });
