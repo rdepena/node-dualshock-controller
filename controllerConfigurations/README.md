@@ -1,10 +1,8 @@
-These json files are used to map the controller inputs:
+These json files are used to map the controller:
 =========================
 
 ##To add a new controller:
-
-##use DeviceDiscoveryHelp.js
-In the examples folder there is a file called deviceDiscoveryHelp.js that I used to create the existing files.
+Use DeviceDiscoveryHelp.js in the examples folder, using node-hid you can obtain the values you need to create a controller.json file and leverage the library to wire it up.
 
 ###To connect the right controller
 the vendorId and the productId need to be set to the right values, you can use node-hid to determine what these are.
