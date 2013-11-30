@@ -17,17 +17,17 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
 	});
 
 	pressed = function (data) {
-		console.log(data + ": pressed");
+		console.log(data + ": press");
 	};
 	released = function (data) {
-		console.log(data + ": released");
+		console.log(data + ": release");
 	};
 	analog = function (data) {
 		console.log(data + ": analog");
 	};
 	//subscribe to all the buttons:
 	for (var button in controllerConfiguration.buttons) {
-		this.controller.on(button + ":pressed", pressed);
+		this.controller.on(button + ":press", pressed);
 		this.controller.on(button + ":release", released);
 		this.controller.on(button+":analog", analog);
 	}

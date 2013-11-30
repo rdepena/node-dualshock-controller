@@ -47,7 +47,7 @@ dualShock3.on('right:move', function(data) {
 dualShock3.on('connected', function(data) {
   //...doStuff();
 });
-dualShock3.on('square:pressed', function (data) {
+dualShock3.on('square:press', function (data) {
   //...doStuff();
 });
 dualShock3.on('square:release', function (data) {
