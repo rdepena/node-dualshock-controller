@@ -1,11 +1,8 @@
 { 
-	"analogsPresent" : true,
 	"leftAnalogY" : 7,
 	"leftAnalogX" : 6,
 	"rightAnalogY" : 8,
 	"rightAnalogX" : 9,
-	"buttonBlockTwo" : 2,
-	"buttonBlockOne" : 3,
 	"vendorId" : 1356,
 	"productId" : 616,
 	"buttons" : {
