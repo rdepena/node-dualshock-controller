@@ -87,5 +87,23 @@
 			"buttonBlock":4,
 			"buttonValue": "0x01"
 		}
+	},
+	"motionInputs":{
+		"rightLeft" : {
+			"directionPin" : 41,
+			"valuePin" : 42
+		},
+		"forwardBackward" : {
+			"directionPin" : 43,
+			"valuePin" : 44 
+		},
+		"upDown" : {
+			"directionPin" : 45,
+			"valuePin" : 46
+		},
+		"yaw" : {
+			"directionPin" : 47,
+			"valuePin" : 48
+		}
 	}
 }

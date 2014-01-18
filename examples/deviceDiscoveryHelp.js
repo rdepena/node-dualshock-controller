@@ -5,12 +5,21 @@
 	var controller = new HID.HID(1356, 616);
 
 	function processData(err, data) {
-		for (var key in data) {
-			console.log(key + " " + data[key]);
+		for (var i = 0; i < data.length; i++) {
+			if (i>40) {
+				console.log(i + " " + data[i]);	
+			}
 		}
+		console.log('seperator');
 		controller.read(processData);
 	}
-	//controller.read(processData);
+
+	console.log('this is the controller object');
+
 	console.log(controller);
+
+	console.log('lets try to read from the controller');
+
+	controller.read(processData);
 
 }());
