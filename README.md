@@ -17,6 +17,16 @@ node-dualshock-controller
     
 ## Guide 
 
+###Connecting the controller
+
+Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
+
+Via Bluetooth: just make sure you pair with the controller via bluetooth.
+
+Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON. 
+
+Either way should work.
+
 ###Use the DualShock library
 
 ~~~~ js
