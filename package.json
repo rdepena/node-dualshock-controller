@@ -1,6 +1,6 @@
 {
   "name": "dualshock-controller",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "node library for dual shock controllers",
   "main": "index.js",
   "directories": {
