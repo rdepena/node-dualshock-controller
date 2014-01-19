@@ -1,142 +1,142 @@
-{ 
-	"vendorId" : 1356,
-	"productId" : 616,
-	"analogSticks" : [
-		{
-			"name" : "left",
-			"x" : 7,
-			"y" : 6
-		},
-		{
-			"name" : "right",
-			"x" : 9,
-			"y" : 8
-		}
-	],
-	"buttons" : [
-		{
-			"name": "l2",
-			"buttonBlock": 3,
-			"buttonValue": "0x01",
-			"analogPin" : 18
-		},
-		{
-			"name": "r2",
-			"buttonBlock": 3,
-			"buttonValue": "0x02",
-			"analogPin" : 19
-		},
-		{
-			"name": "l1",
-			"buttonBlock": 3,
-			"buttonValue": "0x04",
-			"analogPin" : 20
-		},
-		{	
-			"name":"r1",
-			"buttonBlock": 3,
-			"buttonValue": "0x08",
-			"analogPin" : 21
-		},
-		{
-			"name": "triangle",
-			"buttonBlock": 3,
-			"buttonValue": "0x10",
-			"analogPin" : 22
-		},
-		{
-			"name": "circle",
-			"buttonBlock": 3,
-			"buttonValue": "0x20",
-			"analogPin" : 23
-		},
-		{
-			"name": "x",
-			"buttonBlock": 3,
-			"buttonValue": "0x40",
-			"analogPin" : 24
-		},
-		{
-			"name": "square",
-			"buttonBlock": 3,
-			"buttonValue": "0x80",
-			"analogPin": 25
-		},
-		{
-			"name": "select",
-			"buttonBlock": 2,
-			"buttonValue": "0x1"
-		},
-		{
-			"name": "select",
-			"buttonBlock": 2,
-			"buttonValue": "0x1"
-		},
-		{
-			"name": "leftAnalogBump",
-			"buttonBlock": 2,
-			"buttonValue": "0x2"
-		},
-		{
-			"name": "rightAnalogBump",
-			"buttonBlock": 2,
-			"buttonValue": "0x4"
-		},
-		{
-			"name": "start",
-			"buttonBlock": 2,
-			"buttonValue": "0x08"
-		},
-		{
-			"name": "dpadUp",
-			"buttonBlock": 2,
-			"buttonValue": "0x10",
-			"analogPin": 14
-		},
-		{
-			"name": "dpadRight",
-			"buttonBlock": 2,
-			"buttonValue": "0x20",
-			"analogPin": 15
-		},
-		{
-			"name": "dpadDown",
-			"buttonBlock": 2,
-			"buttonValue" : "0x40",
-			"analogPin" : 16
-		},
-		{
-			"name": "dpadLeft",
-			"buttonBlock": 2,
-			"buttonValue": "0x80",
-			"analogPin": 17
-		},
-		{
-			"name": "psxButton",
-			"buttonBlock":4,
-			"buttonValue": "0x01"
-		}
-	],
-	"motionInputs": [
-			{
-				"name" : "rightLeft", 
-				"directionPin" : 41,
-				"valuePin" : 42
-			},
-			{
-				"name" : "forwardBackward",
-				"directionPin" : 43,
-				"valuePin" : 44 
-			},
-			{
-				"name" : "upDown",
-				"directionPin" : 45,
-				"valuePin" : 46
-			},
-			{
-				"name" : "yaw",
-				"directionPin" : 47,
-				"valuePin" : 48
-			}
-		]
+{
+    "vendorId" : 1356,
+    "productId" : 616,
+    "analogSticks" : [
+        {
+            "name" : "left",
+            "x" : 7,
+            "y" : 6
+        },
+        {
+            "name" : "right",
+            "x" : 9,
+            "y" : 8
+        }
+    ],
+    "buttons" : [
+        {
+            "name": "l2",
+            "buttonBlock": 3,
+            "buttonValue": "0x01",
+            "analogPin" : 18
+        },
+        {
+            "name": "r2",
+            "buttonBlock": 3,
+            "buttonValue": "0x02",
+            "analogPin" : 19
+        },
+        {
+            "name": "l1",
+            "buttonBlock": 3,
+            "buttonValue": "0x04",
+            "analogPin" : 20
+        },
+        {
+            "name":"r1",
+            "buttonBlock": 3,
+            "buttonValue": "0x08",
+            "analogPin" : 21
+        },
+        {
+            "name": "triangle",
+            "buttonBlock": 3,
+            "buttonValue": "0x10",
+            "analogPin" : 22
+        },
+        {
+            "name": "circle",
+            "buttonBlock": 3,
+            "buttonValue": "0x20",
+            "analogPin" : 23
+        },
+        {
+            "name": "x",
+            "buttonBlock": 3,
+            "buttonValue": "0x40",
+            "analogPin" : 24
+        },
+        {
+            "name": "square",
+            "buttonBlock": 3,
+            "buttonValue": "0x80",
+            "analogPin": 25
+        },
+        {
+            "name": "select",
+            "buttonBlock": 2,
+            "buttonValue": "0x1"
+        },
+        {
+            "name": "select",
+            "buttonBlock": 2,
+            "buttonValue": "0x1"
+        },
+        {
+            "name": "leftAnalogBump",
+            "buttonBlock": 2,
+            "buttonValue": "0x2"
+        },
+        {
+            "name": "rightAnalogBump",
+            "buttonBlock": 2,
+            "buttonValue": "0x4"
+        },
+        {
+            "name": "start",
+            "buttonBlock": 2,
+            "buttonValue": "0x08"
+        },
+        {
+            "name": "dpadUp",
+            "buttonBlock": 2,
+            "buttonValue": "0x10",
+            "analogPin": 14
+        },
+        {
+            "name": "dpadRight",
+            "buttonBlock": 2,
+            "buttonValue": "0x20",
+            "analogPin": 15
+        },
+        {
+            "name": "dpadDown",
+            "buttonBlock": 2,
+            "buttonValue" : "0x40",
+            "analogPin" : 16
+        },
+        {
+            "name": "dpadLeft",
+            "buttonBlock": 2,
+            "buttonValue": "0x80",
+            "analogPin": 17
+        },
+        {
+            "name": "psxButton",
+            "buttonBlock":4,
+            "buttonValue": "0x01"
+        }
+    ],
+    "motionInputs": [
+            {
+                "name" : "rightLeft",
+                "directionPin" : 41,
+                "valuePin" : 42
+            },
+            {
+                "name" : "forwardBackward",
+                "directionPin" : 43,
+                "valuePin" : 44
+            },
+            {
+                "name" : "upDown",
+                "directionPin" : 45,
+                "valuePin" : 46
+            },
+            {
+                "name" : "yaw",
+                "directionPin" : 47,
+                "valuePin" : 48
+            }
+        ]
 }

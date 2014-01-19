@@ -1,60 +1,60 @@
-{ 
-	"vendorId" : 1356,
-	"productId" : 1476,
-	"analogSticks" : [
-		{
-			"name" : "left",
-			"x" : 1,
-			"y" : 2
-		},
-		{
-			"name" : "right",
-			"x" : 3,
-			"y" : 4
-		}
-	],
-	"buttons" : [
-		{	
-			"name": "l2",
-			"buttonBlock": 6,
-			"buttonValue": "0x04",
-			"analogPin" : 8
-		},
-		{
-			"name": "r2",
-			"buttonBlock": 6,
-			"buttonValue": "0x08",
-			"analogPin" : 9
-		},
-		{
-			"name": "l1",
-			"buttonBlock": 6,
-			"buttonValue": "0x01"
-		},
-		{
-			"name": "r1",
-			"buttonBlock": 6,
-			"buttonValue": "0x02"
-		},
-		{
-			"name": "leftAnalogBump",
-			"buttonBlock": 6,
-			"buttonValue": "0x40"
-		},
-		{
-			"name": "rightAnalogBump",
-			"buttonBlock": 6,
-			"buttonValue": "0x80"
-		},
-		{
-			"name": "psxButton",
-			"buttonBlock": 7,
-			"buttonValue": "0x01"
-		},
-		{
-			"name": "touchPad",
-			"buttonBlock": 7,
-			"buttonValue": "0x02"
-		}
-	]
+{
+    "vendorId" : 1356,
+    "productId" : 1476,
+    "analogSticks" : [
+        {
+            "name" : "left",
+            "x" : 1,
+            "y" : 2
+        },
+        {
+            "name" : "right",
+            "x" : 3,
+            "y" : 4
+        }
+    ],
+    "buttons" : [
+        {
+            "name": "l2",
+            "buttonBlock": 6,
+            "buttonValue": "0x04",
+            "analogPin" : 8
+        },
+        {
+            "name": "r2",
+            "buttonBlock": 6,
+            "buttonValue": "0x08",
+            "analogPin" : 9
+        },
+        {
+            "name": "l1",
+            "buttonBlock": 6,
+            "buttonValue": "0x01"
+        },
+        {
+            "name": "r1",
+            "buttonBlock": 6,
+            "buttonValue": "0x02"
+        },
+        {
+            "name": "leftAnalogBump",
+            "buttonBlock": 6,
+            "buttonValue": "0x40"
+        },
+        {
+            "name": "rightAnalogBump",
+            "buttonBlock": 6,
+            "buttonValue": "0x80"
+        },
+        {
+            "name": "psxButton",
+            "buttonBlock": 7,
+            "buttonValue": "0x01"
+        },
+        {
+            "name": "touchPad",
+            "buttonBlock": 7,
+            "buttonValue": "0x02"
+        }
+    ]
 }
