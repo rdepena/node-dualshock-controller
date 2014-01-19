@@ -37,7 +37,7 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
     }
 
-    subscribe to the motion events.
+    //subscribe to the motion events.
     controller.on('rightLeft' + ':motion', function (data) {
         motion('rightLeft', data);
     });
