@@ -1,4 +1,4 @@
-node-dualshock-controller
+    node-dualshock-controller
 =========================
 
 `dualshock-controller` is a node library that exposes events from a ps3 (ps4 partially supported) dualshock controller connected.
@@ -25,7 +25,6 @@ Via Bluetooth: just make sure you pair with the controller via bluetooth.
 
 Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.
 
-Either way should work.
 
 ###Use the DualShock library
 
@@ -64,6 +63,32 @@ dualShock3.on('square:press', function (data) {
 dualShock3.on('square:release', function (data) {
   //...doStuff();
 });
+
+//as of version 0.4 you can now subscribe to sixasis motion events:
+//the object returned from each of the movement events is as follows:
+//{
+//    direction : values can be: 1 for right, forward and up. 2 for left, backwards and down.
+//    value : values will be from 0 to x on each direction
+//}
+
+//right-left movement
+dualShock3.on('rightLeft:motion', function (data) {
+    //...doStuff();
+});
+
+//forward-back movement
+dualShock3.on('forwardBackward:motion', function (data) {
+    //...doStuff();
+});
+//up-down movement
+dualShock3.on('upDown' + ':motion', function (data) {
+    //...doStuff();
+});
+//yaw rotation
+dualShock3.on('yaw' + ':motion', function (data) {
+    //...doStuff();
+});
+
 
 //connect the controller
 dualShock3.connect();

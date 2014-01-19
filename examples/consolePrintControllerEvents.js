@@ -37,10 +37,16 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
     }
 
+    subscribe to the motion events.
     controller.on('rightLeft' + ':motion', function (data) {
         motion('rightLeft', data);
     });
-
+    controller.on('forwardBackward' + ':motion', function (data) {
+         motion('forwardBackward', data);
+    });
+    controller.on('upDown' + ':motion', function (data) {
+         motion('upDown', data);
+    });
     //once everything is ready we call connect()
     controller.connect();
 };
