@@ -1,4 +1,4 @@
-    node-dualshock-controller
+node-dualshock-controller
 =========================
 
 `dualshock-controller` is a node library that exposes events from a ps3 (ps4 partially supported) dualshock controller connected.
@@ -81,14 +81,9 @@ dualShock3.on('forwardBackward:motion', function (data) {
     //...doStuff();
 });
 //up-down movement
-dualShock3.on('upDown' + ':motion', function (data) {
+dualShock3.on('upDown:motion', function (data) {
     //...doStuff();
 });
-//yaw rotation
-dualShock3.on('yaw' + ':motion', function (data) {
-    //...doStuff();
-});
-
 
 //connect the controller
 dualShock3.connect();
