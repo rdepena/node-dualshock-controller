@@ -4,13 +4,13 @@
     "analogSticks" : [
         {
             "name" : "left",
-            "x" : 7,
-            "y" : 6
+            "x" : 6,
+            "y" : 7
         },
         {
             "name" : "right",
-            "x" : 9,
-            "y" : 8
+            "x" : 8,
+            "y" : 9
         }
     ],
     "buttons" : [
