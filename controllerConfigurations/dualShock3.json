@@ -1,93 +1,122 @@
 { 
-	"leftAnalogY" : 7,
-	"leftAnalogX" : 6,
-	"rightAnalogY" : 8,
-	"rightAnalogX" : 9,
 	"vendorId" : 1356,
 	"productId" : 616,
-	"buttons" : {
-		"l2": {
+	"analogSticks" : [
+		{
+			"name" : "left",
+			"x" : 7,
+			"y" : 6
+		},
+		{
+			"name" : "right",
+			"x" : 9,
+			"y" : 8
+		}
+	],
+	"buttons" : [
+		{
+			"name": "l2",
 			"buttonBlock": 3,
 			"buttonValue": "0x01",
 			"analogPin" : 18
 		},
-		"r2":{
+		{
+			"name": "r2",
 			"buttonBlock": 3,
 			"buttonValue": "0x02",
 			"analogPin" : 19
 		},
-		"l1":{
+		{
+			"name": "l1",
 			"buttonBlock": 3,
 			"buttonValue": "0x04",
 			"analogPin" : 20
 		},
-		"r1":{
+		{	
+			"name":"r1",
 			"buttonBlock": 3,
 			"buttonValue": "0x08",
 			"analogPin" : 21
 		},
-		"triangle":{
+		{
+			"name": "triangle",
 			"buttonBlock": 3,
 			"buttonValue": "0x10",
 			"analogPin" : 22
 		},
-		"circle":{
+		{
+			"name": "circle",
 			"buttonBlock": 3,
 			"buttonValue": "0x20",
 			"analogPin" : 23
 		},
-		"x":{
+		{
+			"name": "x",
 			"buttonBlock": 3,
 			"buttonValue": "0x40",
 			"analogPin" : 24
 		},
-		"square":{
+		{
+			"name": "square",
 			"buttonBlock": 3,
 			"buttonValue": "0x80",
 			"analogPin": 25
-
 		},
-		"select":{
+		{
+			"name": "select",
 			"buttonBlock": 2,
 			"buttonValue": "0x1"
 		},
-		"leftAnalogBump":{
+		{
+			"name": "select",
+			"buttonBlock": 2,
+			"buttonValue": "0x1"
+		},
+		{
+			"name": "leftAnalogBump",
 			"buttonBlock": 2,
 			"buttonValue": "0x2"
 		},
-		"rightAnalogBump":{
+		{
+			"name": "rightAnalogBump",
 			"buttonBlock": 2,
 			"buttonValue": "0x4"
 		},
-		"start":{
+		{
+			"name": "start",
 			"buttonBlock": 2,
 			"buttonValue": "0x08"
 		},
-		"dpadUp":{
+		{
+			"name": "dpadUp",
 			"buttonBlock": 2,
 			"buttonValue": "0x10",
 			"analogPin": 14
 		},
-		"dpadRight":{
+		{
+			"name": "dpadRight",
 			"buttonBlock": 2,
 			"buttonValue": "0x20",
 			"analogPin": 15
 		},
-		"dpadDown" : {
+		{
+			"name": "dpadDown",
 			"buttonBlock": 2,
 			"buttonValue" : "0x40",
 			"analogPin" : 16
 		},
-		"dpadLeft":{	
+		{
+			"name": "dpadLeft",
 			"buttonBlock": 2,
 			"buttonValue": "0x80",
 			"analogPin": 17
 		},
-		"psxButton":{
+		{
+			"name": "psxButton",
 			"buttonBlock":4,
 			"buttonValue": "0x01"
 		}
-	},
+	],
 	"motionInputs": [
 			{
 				"name" : "rightLeft", 

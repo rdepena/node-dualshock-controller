@@ -31,14 +31,14 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
 		console.log(data);
 	};
 	//subscribe to all the buttons:
-	for (var button in controllerConfiguration.buttons) {
-		controller.on(button + ":press", pressed);
-		controller.on(button + ":release", released);
-		controller.on(button+":analog", analog);
-	}
+    for (var i = 0; i < controllerConfiguration.buttons.length; i++) {
+		controller.on(controllerConfiguration.buttons[i].name + ":press", pressed);
+		controller.on(controllerConfiguration.buttons[i].name + ":release", released);
+		controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
+    }
 
 	controller.on('rightLeft' + ':motion', function (data) {
-		motion(controllerConfiguration.motionInputs.rightLeft, data);
+		motion('rightLeft', data);
 	});
 
 	//once everything is ready we call connect()
