@@ -68,7 +68,7 @@ dualShock3.on('square:release', function (data) {
 //the object returned from each of the movement events is as follows:
 //{
 //    direction : values can be: 1 for right, forward and up. 2 for left, backwards and down.
-//    value : values will be from 0 to x on each direction
+//    value : values will be from 0 to 120 for directions right, forward and up and from 0 to -120 for left, backwards and down.
 //}
 
 //right-left movement
