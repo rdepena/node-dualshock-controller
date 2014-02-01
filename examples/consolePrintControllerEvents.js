@@ -44,9 +44,9 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
     controller.on('forwardBackward' + ':motion', function (data) {
          motion('forwardBackward', data);
     });
-    controller.on('upDown' + ':motion', function (data) {
-         motion('upDown', data);
-    });
+    // controller.on('upDown' + ':motion', function (data) {
+    //      motion('upDown', data);
+    // });
     //once everything is ready we call connect()
     controller.connect();
 };

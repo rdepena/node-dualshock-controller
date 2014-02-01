@@ -31,36 +31,39 @@ Via USB: once the controller is connected to the computer make sure you press th
 ~~~~ js
 var dualShock = require('dualshock-controller');
 
-//as of version 0.2 you will need to init the controller
-var dualShock3 = dualShock();
-
-//this is because now you can use dualShock4 by passing the controller config file
-var dualShock4 = dualShock(
+//pass options to init the controller.
+var controller = dualShock(
     {
-        config: "dualshock4-generic-driver"
+        //you can use a ds4 by uncommenting this line.
+        //config: "dualshock4-generic-driver",
+        //if using ds4 comment this line.
+        config : "dualShock3",
+        //smooths the output from the acelerometers (moving averages) defaults to true
+        accelerometerSmoothing : true,
+        //smooths the output from the analog sticks (moving averages) defaults to false
+        analogStickSmoothing : false
     });
 
-
 //make sure you add an error event handler
-dualShock3.on('error', function(data) {
+controller.on('error', function(data) {
   //...someStuffDidNotWork();
 });
 
 //add event handlers:
-dualShock3.on('left:move', function(data) {
+controller.on('left:move', function(data) {
   //...doStuff();
 });
-dualShock3.on('right:move', function(data) {
+controller.on('right:move', function(data) {
   //...doStuff();
 });
-dualShock3.on('connected', function(data) {
+controller.on('connected', function(data) {
   //...doStuff();
 });
 //as of version 0.3 all events are in the same tense so "pressed" will not work.
-dualShock3.on('square:press', function (data) {
+controller.on('square:press', function (data) {
   //...doStuff();
 });
-dualShock3.on('square:release', function (data) {
+controller.on('square:release', function (data) {
   //...doStuff();
 });
 
@@ -72,21 +75,21 @@ dualShock3.on('square:release', function (data) {
 //}
 
 //right-left movement
-dualShock3.on('rightLeft:motion', function (data) {
+controller.on('rightLeft:motion', function (data) {
     //...doStuff();
 });
 
 //forward-back movement
-dualShock3.on('forwardBackward:motion', function (data) {
+controller.on('forwardBackward:motion', function (data) {
     //...doStuff();
 });
 //up-down movement
-dualShock3.on('upDown:motion', function (data) {
+controller.on('upDown:motion', function (data) {
     //...doStuff();
 });
 
 //connect the controller
-dualShock3.connect();
+controller.connect();
 
 ~~~~
 
