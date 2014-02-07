@@ -1,6 +1,6 @@
 (function () {
+    'use strict';
     var dualShock = require('./../lib/dualShock.js');
-
 
     //init the controller
     var dualShock3 = dualShock();
