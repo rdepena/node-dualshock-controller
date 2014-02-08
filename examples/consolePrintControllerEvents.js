@@ -41,9 +41,9 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
     controller.on('rightLeft' + ':motion', function (data) {
         motion('rightLeft', data);
     });
-    controller.on('forwardBackward' + ':motion', function (data) {
-         motion('forwardBackward', data);
-    });
+    // controller.on('forwardBackward' + ':motion', function (data) {
+    //      motion('forwardBackward', data);
+    // });
     // controller.on('upDown' + ':motion', function (data) {
     //      motion('upDown', data);
     // });
