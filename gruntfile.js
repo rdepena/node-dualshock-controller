@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
             files: files,
-            tasks: ['jshint', 'nodeunit']
+            tasks: ['jshint', 'mochaTest']
         },
         jshint: {
             // define the files to lint
@@ -21,15 +21,20 @@ module.exports = function(grunt) {
                 }
             }
         },
-        nodeunit: {
-            all: ['test/*.js']
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['test/*.js']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-mocha-test');
 
-    grunt.registerTask('test', ['jshint', 'nodeunit']);
-    grunt.registerTask('default', ['jshint', 'nodeunit']);
+    grunt.registerTask('test', ['jshint', 'mochaTest']);
+    grunt.registerTask('default', ['jshint', 'mochaTest']);
 };
