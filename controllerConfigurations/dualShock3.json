@@ -138,5 +138,25 @@
                 "directionPin" : 47,
                 "valuePin" : 48
             }
-        ]
+        ],
+    "status": [
+        {
+            "name" : "chargingState",
+            "pin" : 29,
+            "states" : [
+                {
+                    "value" : 0,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 2,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 3,
+                    "state" : "Not Charging"
+                }
+            ]
+        }
+    ]
 }
