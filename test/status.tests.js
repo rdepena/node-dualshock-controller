@@ -1,6 +1,8 @@
 // Module dependencies.
 var Status = require('../lib/status'),
-    assert = require('assert');
+    assert = require('assert'),
+    sinon = require('sinon'),
+    EventEmitter = require('events').EventEmitter;
 
 describe('the status component', function () {
     var mockConfig = [{
@@ -17,15 +19,21 @@ describe('the status component', function () {
             },
             {
                 "value" : 3,
-                "state" : "Not Charging"
+                "state" : "40%"
             }
         ]
     }],
+    dataA = [0, 0],
+    dataB = [0, 3],
     instance = [{ name: 'process' }],
-    status;
+    status,
+    emitter,
+    spy;
 
     beforeEach(function () {
-        status = new Status(mockConfig);
+        emitter = new EventEmitter();
+        spy = sinon.spy();
+        status = new Status(emitter, mockConfig);
     });
 
     describe('object instance', function () {
@@ -39,14 +47,12 @@ describe('the status component', function () {
 
     describe('process()', function () {
         it('process should return an object with the expected values', function () {
-            for (var i = 0; i < mockConfig[0].states.length; i++) {
-                var controllerStatus = status.process([mockConfig[0].states[i].value]);
-
-                assert.equal(typeof controllerStatus.chargingState, 'string');
-                assert.equal(controllerStatus.chargingState,mockConfig[0].states[i].state);
-            }
-
+            emitter.on('chargingState:change', spy);
+            status.process(dataA);
+            var spyArgument = spy.args[0][0];
+            assert.equal(typeof spyArgument, 'string');
+            assert.equal(spyArgument, 'Charging');
+            spyArgument = null;
         });
     });
-
 });

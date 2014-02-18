@@ -6,7 +6,7 @@
 
     controller.on('data', function (data) {
         for (var i = 0; i < data.length; i++) {
-            if (i>40) {
+            if (i === 30) {
                 console.log(i + " " + data[i]);
             }
         }

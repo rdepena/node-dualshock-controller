@@ -141,7 +141,7 @@
         ],
     "status": [
         {
-            "name" : "chargingState",
+            "name" : "charging",
             "pin" : 29,
             "states" : [
                 {
@@ -155,6 +155,40 @@
                 {
                     "value" : 3,
                     "state" : "Not Charging"
+                }
+            ]
+        },
+        {
+            "name" : "battery",
+            "pin" : 30,
+            "states" : [
+                {
+                    "value" : 238,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 0,
+                    "state" : "No charge"
+                },
+                {
+                    "value" : 1,
+                    "state" : "20%"
+                },
+                {
+                    "value" : 2,
+                    "state" : "40%"
+                },
+                {
+                    "value" : 3,
+                    "state" : "60%"
+                },
+                {
+                    "value" : 4,
+                    "state" : "80%"
+                },
+                {
+                    "value" : 5,
+                    "state" : "100%"
                 }
             ]
         }
