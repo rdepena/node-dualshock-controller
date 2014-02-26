@@ -37,11 +37,11 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
     }
     //subscribe to all the status events:
-    if (controllerConfiguration.status.length) {
-        for (var i = 0; i < controllerConfiguration.status.length; i++) {
-            controller.on(controllerConfiguration.status[i].name + ":change", console.log);
-        }
-    }
+    // if (controllerConfiguration.status.length) {
+    //     for (var i = 0; i < controllerConfiguration.status.length; i++) {
+    //         controller.on(controllerConfiguration.status[i].name + ":change", console.log);
+    //     }
+    // }
     //subscribe to the motion events.
     controller.on('rightLeft' + ':motion', function (data) {
         motion('rightLeft', data);
