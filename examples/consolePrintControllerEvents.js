@@ -38,7 +38,7 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
     }
     //subscribe to all the status events:
     if (controllerConfiguration.status.length) {
-        for (var i = 0; i < controllerConfiguration.status.length; i++) {
+        for (i = 0; i < controllerConfiguration.status.length; i++) {
             controller.on(controllerConfiguration.status[i].name + ":change", console.log);
         }
     }
