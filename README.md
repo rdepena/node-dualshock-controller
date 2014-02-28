@@ -60,7 +60,6 @@ controller.on('right:move', function(data) {
 controller.on('connected', function(data) {
   //...doStuff();
 });
-//as of version 0.3 all events are in the same tense so "pressed" will not work.
 controller.on('square:press', function (data) {
   //...doStuff();
 });
@@ -68,7 +67,7 @@ controller.on('square:release', function (data) {
   //...doStuff();
 });
 
-//as of version 0.4 you can now subscribe to sixasis motion events:
+//sixasis motion events:
 //the object returned from each of the movement events is as follows:
 //{
 //    direction : values can be: 1 for right, forward and up. 2 for left, backwards and down.
@@ -89,6 +88,18 @@ controller.on('upDown:motion', function (data) {
     //...doStuff();
 });
 
+//controller status
+//as of version 0.6.2 you can get the battery %, if the controller is connected and if the controller is charging
+controller.on('battery:change', function (value) {
+     //...doStuff();
+});
+controller.on('connection:change', function (value) {
+     //...doStuff();
+});
+controller.on('charging:change', function (value) {
+     //...doStuff();
+});
+
 //connect the controller
 controller.connect();
 
@@ -96,7 +107,7 @@ controller.connect();
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Ricardo de Pena
+Copyright (c) 2014 Ricardo de Pena
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

@@ -138,5 +138,77 @@
                 "directionPin" : 47,
                 "valuePin" : 48
             }
-        ]
+        ],
+    "status": [
+        {
+            "name" : "charging",
+            "pin" : 29,
+            "states" : [
+                {
+                    "value" : 0,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 2,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 3,
+                    "state" : "Not Charging"
+                }
+            ]
+        },
+        {
+            "name" : "battery",
+            "pin" : 30,
+            "states" : [
+                {
+                    "value" : 238,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 0,
+                    "state" : "No charge"
+                },
+                {
+                    "value" : 1,
+                    "state" : "20%"
+                },
+                {
+                    "value" : 2,
+                    "state" : "40%"
+                },
+                {
+                    "value" : 3,
+                    "state" : "60%"
+                },
+                {
+                    "value" : 4,
+                    "state" : "80%"
+                },
+                {
+                    "value" : 5,
+                    "state" : "100%"
+                }
+            ]
+        },
+        {
+            "name" : "connection",
+            "pin" : 31,
+            "states" : [
+                {
+                    "value" : 18,
+                    "state" : "Usb"
+                },
+                {
+                    "value" : 22,
+                    "state" : "Bluetooth"
+                },
+                {
+                    "value" : 20,
+                    "state" : "Rumbling"
+                }
+            ]
+        }
+    ]
 }

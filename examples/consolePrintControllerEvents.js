@@ -36,17 +36,22 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name + ":release", released);
         controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
     }
-
+    //subscribe to all the status events:
+    if (controllerConfiguration.status && controllerConfiguration.status.length) {
+        for (i = 0; i < controllerConfiguration.status.length; i++) {
+            controller.on(controllerConfiguration.status[i].name + ":change", console.log);
+        }
+    }
     //subscribe to the motion events.
     controller.on('rightLeft' + ':motion', function (data) {
         motion('rightLeft', data);
     });
-    // controller.on('forwardBackward' + ':motion', function (data) {
-    //      motion('forwardBackward', data);
-    // });
-    // controller.on('upDown' + ':motion', function (data) {
-    //      motion('upDown', data);
-    // });
+    controller.on('forwardBackward' + ':motion', function (data) {
+         motion('forwardBackward', data);
+    });
+    controller.on('upDown' + ':motion', function (data) {
+         motion('upDown', data);
+    });
     //once everything is ready we call connect()
     controller.connect();
 };
