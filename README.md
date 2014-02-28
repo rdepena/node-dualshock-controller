@@ -60,7 +60,6 @@ controller.on('right:move', function(data) {
 controller.on('connected', function(data) {
   //...doStuff();
 });
-//as of version 0.3 all events are in the same tense so "pressed" will not work.
 controller.on('square:press', function (data) {
   //...doStuff();
 });
