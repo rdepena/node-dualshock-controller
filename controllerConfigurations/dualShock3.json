@@ -191,6 +191,24 @@
                     "state" : "100%"
                 }
             ]
+        },
+        {
+            "name" : "connection",
+            "pin" : 31,
+            "states" : [
+                {
+                    "value" : 18,
+                    "state" : "Usb"
+                },
+                {
+                    "value" : 22,
+                    "state" : "Bluetooth"
+                },
+                {
+                    "value" : 20,
+                    "state" : "Rumbling"
+                }
+            ]
         }
     ]
 }

@@ -37,7 +37,7 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name +":analog", analog);
     }
     //subscribe to all the status events:
-    if (controllerConfiguration.status.length) {
+    if (controllerConfiguration.status && controllerConfiguration.status.length) {
         for (i = 0; i < controllerConfiguration.status.length; i++) {
             controller.on(controllerConfiguration.status[i].name + ":change", console.log);
         }
