@@ -8,7 +8,7 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
         console.log('right Moved');
         console.log(data);
     });
-    controller.on('connected', function(data) {
+    controller.on('connected', function() {
         console.log('connected');
     });
 
@@ -57,5 +57,3 @@ var printcontrollerEvents = function (controller, controllerConfiguration) {
 };
 
 module.exports = printcontrollerEvents;
-
-
