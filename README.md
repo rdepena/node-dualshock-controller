@@ -1,6 +1,6 @@
 node-dualshock-controller
 =========================
-[![Build Status](https://travis-ci.org/rdepena/node-dualshock-controller.png?branch=master)](https://travis-ci.org/rdepena/node-dualshock-controller)
+[![Build Status](https://travis-ci.org/rdepena/node-dualshock-controller.png?branch=master)](https://travis-ci.org/rdepena/node-dualshock-controller) [![Code Climate](https://codeclimate.com/github/rdepena/node-dualshock-controller.png)](https://codeclimate.com/github/rdepena/node-dualshock-controller)
 
 `dualshock-controller` is a node library that exposes events from a ps3 (ps4 partially supported) dualshock controller connected.
 
