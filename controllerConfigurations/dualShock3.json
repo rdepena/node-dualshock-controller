@@ -5,12 +5,16 @@
         {
             "name" : "left",
             "x" : 6,
-            "y" : 7
+            "y" : 7,
+            "joystickXNumber" : 1,
+            "joystickYNumber" : 0
         },
         {
             "name" : "right",
             "x" : 8,
-            "y" : 9
+            "y" : 9,
+            "joystickXNumber" : 3,
+            "joystickYNumber" : 2
         }
     ],
     "buttons" : [
@@ -18,103 +22,115 @@
             "name": "l2",
             "buttonBlock": 3,
             "buttonValue": "0x01",
-            "analogPin" : 18
+            "analogPin" : 18,
+            "joystickNumber": 8
         },
         {
             "name": "r2",
             "buttonBlock": 3,
             "buttonValue": "0x02",
-            "analogPin" : 19
+            "analogPin" : 19,
+            "joystickNumber" : 9 
         },
         {
             "name": "l1",
             "buttonBlock": 3,
             "buttonValue": "0x04",
-            "analogPin" : 20
+            "analogPin" : 20,
+            "joystickNumber" : 10
         },
         {
             "name":"r1",
             "buttonBlock": 3,
             "buttonValue": "0x08",
-            "analogPin" : 21
+            "analogPin" : 21,
+            "joystickNumber" : 11
         },
         {
             "name": "triangle",
             "buttonBlock": 3,
             "buttonValue": "0x10",
-            "analogPin" : 22
+            "analogPin" : 22,
+            "joystickNumber" : 12
         },
         {
             "name": "circle",
             "buttonBlock": 3,
             "buttonValue": "0x20",
-            "analogPin" : 23
+            "analogPin" : 23,
+            "joystickNumber" : 13
         },
         {
             "name": "x",
             "buttonBlock": 3,
             "buttonValue": "0x40",
-            "analogPin" : 24
+            "analogPin" : 24,
+            "joystickNumber" : 14
         },
         {
             "name": "square",
             "buttonBlock": 3,
             "buttonValue": "0x80",
-            "analogPin": 25
+            "analogPin": 25,
+            "joystickNumber" : 15
         },
         {
             "name": "select",
             "buttonBlock": 2,
-            "buttonValue": "0x1"
-        },
-        {
-            "name": "select",
-            "buttonBlock": 2,
-            "buttonValue": "0x1"
+            "buttonValue": "0x1",
+            "joystickNumber" : 0
         },
         {
             "name": "leftAnalogBump",
             "buttonBlock": 2,
-            "buttonValue": "0x2"
+            "buttonValue": "0x2",
+            "joystickNumber" : 1
         },
         {
             "name": "rightAnalogBump",
             "buttonBlock": 2,
-            "buttonValue": "0x4"
+            "buttonValue": "0x4",
+            "joystickNumber" : 2
         },
         {
             "name": "start",
             "buttonBlock": 2,
-            "buttonValue": "0x08"
+            "buttonValue": "0x08",
+            "joystickNumber" : 3
         },
         {
             "name": "dpadUp",
             "buttonBlock": 2,
             "buttonValue": "0x10",
-            "analogPin": 14
+            "analogPin": 14,
+            "joystickNumber" : 4
         },
         {
             "name": "dpadRight",
             "buttonBlock": 2,
             "buttonValue": "0x20",
-            "analogPin": 15
+            "analogPin": 15,
+            "joystickNumber" : 5
         },
         {
             "name": "dpadDown",
             "buttonBlock": 2,
             "buttonValue" : "0x40",
-            "analogPin" : 16
+            "analogPin" : 16,
+            "joystickNumber" : 6
         },
         {
             "name": "dpadLeft",
             "buttonBlock": 2,
             "buttonValue": "0x80",
-            "analogPin": 17
+            "analogPin": 17,
+            "joystickNumber" : 7
         },
         {
             "name": "psxButton",
             "buttonBlock":4,
-            "buttonValue": "0x01"
+            "buttonValue": "0x01",
+            "joystickNumber" : 16
         }
     ],
     "motionInputs": [
