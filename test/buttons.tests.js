@@ -13,6 +13,18 @@ describe('the Buttons component', function () {
             "buttonBlock": 0,
             "buttonValue": "0x08",
             "analogPin" : 1
+        },
+        {
+            "name": "dpadUp",
+            "buttonBlock": 5,
+            "buttonValue": "0x00",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDown",
+            "buttonBlock": 5,
+            "buttonValue": "0x01",
+            "mask": "0xF"
         }
     ],
     instance = [{ name: 'process' }],
@@ -80,6 +92,38 @@ describe('the Buttons component', function () {
         it('should not raise the analog event', function () {
             emitter.on('button:analog', spy);
             buttons.process(dataB);
+
+            assert.equal(spy.called, false);
+        });
+    });
+
+    describe('ps4 dpad up button', function () {
+        it('should emit the dpadUp:press event', function () {
+            emitter.on('dpadUp:press', spy);
+            buttons.process([0, 0, 0, 0, 0, 0]);
+
+            assert.equal(spy.called, true);
+        });
+
+        it('should not emit the dpadDown:press event', function () {
+            emitter.on('dpadDown:press', spy);
+            buttons.process([0, 0, 0, 0, 0, 0]);
+
+            assert.equal(spy.called, false);
+        });
+    });
+
+    describe('ps4 dpad down button', function () {
+        it('should emit the dpadDown:press event', function () {
+            emitter.on('dpadDown:press', spy);
+            buttons.process([0, 0, 0, 0, 0, parseInt("00001001", 2)]);
+
+            assert.equal(spy.called, true);
+        });
+
+        it('should not emit the dpadUp:press event', function () {
+            emitter.on('dpadUp:press', spy);
+            buttons.process([0, 0, 0, 0, 0, parseInt("00001001", 2)]);
 
             assert.equal(spy.called, false);
         });
