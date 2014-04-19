@@ -1,6 +1,6 @@
 {
   "name": "dualshock-controller",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "node library for dual shock controllers",
   "main": "./lib/dualshock.js",
   "directories": {
@@ -20,9 +20,14 @@
     "joystick": "~0.1.1",
     "lodash": "~2.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^1.0",
+    "sinon": "^1.8",
+    "istanbul": "^0.2"
+  },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "coverage": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
