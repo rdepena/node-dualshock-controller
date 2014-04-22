@@ -11,15 +11,10 @@ module.exports = function(grunt) {
             tasks: ['default']
         },
         jshint: {
-            // define the files to lint
             files: files,
-            // configure JSHint (documented at http://www.jshint.com/docs/)
             options: {
-                // more options here if you want to override JSHint defaults
-                globals: {
-                    console: true,
-                    module: true
-                }
+                node: true,
+                globals: {}
             }
         },
         mochaTest: {
