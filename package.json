@@ -20,7 +20,8 @@
     "grunt-mocha-test": "^0.10",
     "mocha": "^1.17",
     "sinon": "^1.8",
-    "istanbul": "^0.2"
+    "istanbul": "^0.2",
+    "grunt-jsbeautifier": "^0.2.7"
   },
   "scripts": {
     "test": "grunt test",
