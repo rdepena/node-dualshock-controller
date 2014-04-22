@@ -9,7 +9,7 @@ describe('the Buttons component', function() {
     'use strict';
 
     var mockConfig = [{
-        "name": "button",
+        "name": "buttonName",
         "buttonBlock": 0,
         "buttonValue": "0x08",
         "analogPin": 1
@@ -31,7 +31,8 @@ describe('the Buttons component', function() {
         dataB = [0, 0],
         buttons,
         emitter,
-        spy;
+        spy,
+        spyLowerCaseEvents;
 
     beforeEach(function() {
         emitter = new EventEmitter();
@@ -40,6 +41,8 @@ describe('the Buttons component', function() {
         });
         buttons = new Buttons(emitter);
         spy = new sinon.spy();
+        spyLowerCaseEvents = new sinon.spy();
+
     });
 
     describe('object instance', function() {
@@ -52,82 +55,102 @@ describe('the Buttons component', function() {
     });
 
     describe('press events', function() {
-        it('should envoke the button:press', function() {
-            emitter.on('button:press', spy);
+        it('should envoke the buttonName:press', function() {
+            emitter.on('buttonName:press', spy);
+            emitter.on('buttonname:press', spyLowerCaseEvents);
             buttons.process(dataA);
 
             assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
         });
-        it('should not envoke the button:press', function() {
-            emitter.on('button:release', spy);
+        it('should not envoke the buttonName:press', function() {
+            emitter.on('buttonName:release', spy);
+            emitter.on('buttonname:release', spyLowerCaseEvents);
             buttons.process(dataB);
 
             assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
         });
     });
 
     describe('release events', function() {
-        it('should envoke the button:release', function() {
-            emitter.on('button:release', spy);
+        it('should envoke the buttonName:release', function() {
+            emitter.on('buttonName:release', spy);
+            emitter.on('buttonname:release', spyLowerCaseEvents);
             buttons.process(dataA);
             buttons.process(dataB);
 
             assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
         });
-        it('should not envoke the button:release', function() {
-            emitter.on('button:release', spy);
+        it('should not envoke the buttonName:release', function() {
+            emitter.on('buttonName:release', spy);
+            emitter.on('buttonname:release', spyLowerCaseEvents);
             buttons.process(dataA);
 
             assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
         });
     });
 
     describe('button analog', function() {
         it('should raise the analog event', function() {
-            emitter.on('button:analog', spy);
+            emitter.on('buttonName:analog', spy);
+            emitter.on('buttonname:analog', spyLowerCaseEvents);
             buttons.process(dataA);
 
             assert.equal(spy.args[0][0], dataA[1]);
             assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
         });
 
         it('should not raise the analog event', function() {
-            emitter.on('button:analog', spy);
+            emitter.on('buttonName:analog', spy);
+            emitter.on('buttonname:analog', spyLowerCaseEvents);
             buttons.process(dataB);
 
             assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
         });
     });
 
     describe('ps4 dpad up button', function() {
         it('should emit the dpadUp:press event', function() {
             emitter.on('dpadUp:press', spy);
+            emitter.on('dpadup:press', spyLowerCaseEvents);
             buttons.process([0, 0, 0, 0, 0, 0]);
 
             assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
         });
 
         it('should not emit the dpadDown:press event', function() {
             emitter.on('dpadDown:press', spy);
+            emitter.on('dpaddown:press', spyLowerCaseEvents);
             buttons.process([0, 0, 0, 0, 0, 0]);
 
             assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
         });
     });
 
     describe('ps4 dpad down button', function() {
         it('should emit the dpadDown:press event', function() {
             emitter.on('dpadDown:press', spy);
+            emitter.on('dpaddown:press', spyLowerCaseEvents);
             buttons.process([0, 0, 0, 0, 0, parseInt("00001001", 2)]);
 
             assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
         });
 
         it('should not emit the dpadUp:press event', function() {
             emitter.on('dpadUp:press', spy);
+            emitter.on('dpadup:press', spyLowerCaseEvents);
             buttons.process([0, 0, 0, 0, 0, parseInt("00001001", 2)]);
 
             assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
         });
     });
 
