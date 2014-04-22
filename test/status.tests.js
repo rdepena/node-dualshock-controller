@@ -2,7 +2,8 @@
 var Status = require('../lib/status'),
     assert = require('assert'),
     sinon = require('sinon'),
-    EventEmitter = require('events').EventEmitter;
+    EventEmitter = require('events').EventEmitter,
+    config = require('../lib/config');
 
 describe('the status component', function() {
     var mockConfig = [{
@@ -31,6 +32,9 @@ describe('the status component', function() {
     beforeEach(function() {
         emitter = new EventEmitter();
         spy = sinon.spy();
+        config.setControllerConfig({
+            status: mockConfig
+        });
         status = new Status(emitter, mockConfig);
     });
 

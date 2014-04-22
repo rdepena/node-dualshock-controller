@@ -2,7 +2,8 @@
 var Buttons = require('../lib/buttons'),
     assert = require('assert'),
     sinon = require('sinon'),
-    EventEmitter = require('events').EventEmitter;
+    EventEmitter = require('events').EventEmitter,
+    config = require('../lib/config');
 
 describe('the Buttons component', function() {
     'use strict';
@@ -34,7 +35,10 @@ describe('the Buttons component', function() {
 
     beforeEach(function() {
         emitter = new EventEmitter();
-        buttons = new Buttons(emitter, mockConfig);
+        config.setControllerConfig({
+            buttons: mockConfig
+        });
+        buttons = new Buttons(emitter);
         spy = new sinon.spy();
     });
 

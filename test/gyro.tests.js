@@ -2,7 +2,8 @@
 var Gyro = require('../lib/gyro'),
     assert = require('assert'),
     sinon = require('sinon'),
-    EventEmitter = require('events').EventEmitter;
+    EventEmitter = require('events').EventEmitter,
+    config = require('../lib/config');
 
 describe('the Gyro component', function() {
     'use strict';
@@ -24,7 +25,13 @@ describe('the Gyro component', function() {
     beforeEach(function() {
         emitter = new EventEmitter();
         spy = sinon.spy();
-        gyro = new Gyro(emitter, mockConfig, true);
+        config.setOptions({
+            accelerometerSmoothing: false
+        });
+        config.setControllerConfig({
+            motionInputs: mockConfig
+        });
+        gyro = new Gyro(emitter);
     });
 
     describe('object instance', function() {

@@ -14,7 +14,11 @@ module.exports = function(grunt) {
             files: files,
             options: {
                 node: true,
-                globals: {}
+                globals: {
+                    describe: true,
+                    it: true,
+                    beforeEach: true
+                }
             }
         },
         mochaTest: {
