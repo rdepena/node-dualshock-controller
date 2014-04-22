@@ -6,15 +6,15 @@
             "name" : "left",
             "x" : 6,
             "y" : 7,
-            "joystickXNumber" : 1,
-            "joystickYNumber" : 0
+            "joystickXNumber" : 0,
+            "joystickYNumber" : 1
         },
         {
             "name" : "right",
             "x" : 8,
             "y" : 9,
-            "joystickXNumber" : 3,
-            "joystickYNumber" : 2
+            "joystickXNumber" : 2,
+            "joystickYNumber" : 3
         }
     ],
     "buttons" : [
@@ -30,7 +30,7 @@
             "buttonBlock": 3,
             "buttonValue": "0x02",
             "analogPin" : 19,
-            "joystickNumber" : 9 
+            "joystickNumber" : 9
         },
         {
             "name": "l1",
