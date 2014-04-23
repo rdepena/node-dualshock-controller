@@ -97,7 +97,7 @@ describe('the Buttons component', function() {
         it('should raise the hold event', function() {
             emitter.on('buttonName:hold', spy);
             emitter.on('buttonname:hold', spyLowerCaseEvents);
-            console.log(dataA);
+            buttons.process(dataA);
             buttons.process(dataA);
             assert.equal(spy.args[0][0], 'buttonName');
             assert.equal(spy.called, true);
@@ -108,7 +108,7 @@ describe('the Buttons component', function() {
             emitter.on('buttonName:hold', spy);
             emitter.on('buttonname:hold', spyLowerCaseEvents);
             buttons.process(dataB);
-
+            buttons.process(dataB);
             assert.equal(spy.called, false);
             assert.equal(spyLowerCaseEvents.called, false);
         });
