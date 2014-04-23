@@ -25,7 +25,9 @@ var printcontrollerEvents = function(controller, controllerConfiguration) {
     var analog = function(data) {
         console.log(data + ": analog");
     };
-
+    var hold = function(data) {
+        console.log(data + ": hold");
+    };
     var motion = function(motionInput, data) {
         console.log(motionInput);
         console.log(data);
@@ -35,6 +37,8 @@ var printcontrollerEvents = function(controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name + ":press", pressed);
         controller.on(controllerConfiguration.buttons[i].name + ":release", released);
         controller.on(controllerConfiguration.buttons[i].name + ":analog", analog);
+        controller.on(controllerConfiguration.buttons[i].name + ":hold", analog);
+
     }
     //subscribe to all the status events:
     if (controllerConfiguration.status && controllerConfiguration.status.length) {

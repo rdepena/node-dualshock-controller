@@ -93,6 +93,27 @@ describe('the Buttons component', function() {
         });
     });
 
+    describe('button hold', function() {
+        it('should raise the hold event', function() {
+            emitter.on('buttonName:hold', spy);
+            emitter.on('buttonname:hold', spyLowerCaseEvents);
+            console.log(dataA);
+            buttons.process(dataA);
+            assert.equal(spy.args[0][0], 'buttonName');
+            assert.equal(spy.called, true);
+            assert.equal(spyLowerCaseEvents.called, true);
+        });
+
+        it('should not raise the hold event', function() {
+            emitter.on('buttonName:hold', spy);
+            emitter.on('buttonname:hold', spyLowerCaseEvents);
+            buttons.process(dataB);
+
+            assert.equal(spy.called, false);
+            assert.equal(spyLowerCaseEvents.called, false);
+        });
+    });
+
     describe('button analog', function() {
         it('should raise the analog event', function() {
             emitter.on('buttonName:analog', spy);
