@@ -37,7 +37,7 @@ var printcontrollerEvents = function(controller, controllerConfiguration) {
         controller.on(controllerConfiguration.buttons[i].name + ":press", pressed);
         controller.on(controllerConfiguration.buttons[i].name + ":release", released);
         controller.on(controllerConfiguration.buttons[i].name + ":analog", analog);
-        controller.on(controllerConfiguration.buttons[i].name + ":hold", analog);
+        controller.on(controllerConfiguration.buttons[i].name + ":hold", hold);
 
     }
     //subscribe to all the status events:
