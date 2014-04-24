@@ -1,7 +1,7 @@
-var DualShock = require('./../lib/dualshock.js'),
-    assert = require('assert'),
+var assert = require('assert'),
     Emitter = require('events').EventEmitter,
-    config = require('../lib/config');
+    config = require('../lib/config'),
+    mockery = require('mockery');
 
 function Device() {
     Emitter.call(this);
@@ -55,7 +55,23 @@ var motions = config.motionInputs;
 var status = config.status;
 
 describe('the DualShock component', function() {
-    var controller, device;
+    //enable mockery and mock node-hid:
+    mockery.enable();
+    var nodeHidMock = {
+        HID: function(vendor, productId) {
+            return {
+                on: function() {
+                    //could use this at some point. nothing atm.
+                }
+            };
+        }
+    };
+    //register mock node-hid.
+    mockery.registerMock('node-hid', nodeHidMock);
+
+    //once mockery is up we can require the dualshock module.
+    var DualShock = require('./../lib/dualshock.js'),
+        controller, device;
 
     before(function() {
         device = new Device();
@@ -63,6 +79,12 @@ describe('the DualShock component', function() {
             config: config,
             device: device
         });
+    });
+
+    //disable mockery so it does not interfere with other tests.
+    after(function() {
+        mockery.deregisterMock('node-hid');
+        mockery.disable();
     });
 
     beforeEach(function() {

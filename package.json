@@ -23,7 +23,8 @@
     "sinon": "^1.8",
     "istanbul": "^0.2",
     "grunt-jsbeautifier": "^0.2.7",
-    "jshint": "^2.5.0"
+    "jshint": "^2.5.0",
+    "mockery": "^1.4.0"
   },
   "scripts": {
     "test": "grunt test",
