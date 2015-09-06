@@ -8,7 +8,7 @@
     "test": "test"
   },
   "dependencies": {
-    "node-hid": "^0.3",
+    "node-hid": "^0.4.0",
     "colors": "^0.6",
     "joystick": "^0.1.1",
     "lodash": "^2.4.1"
