@@ -1,6 +1,6 @@
 {
   "name": "dualshock-controller",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "node library for dual shock controllers",
   "main": "./lib/dualshock.js",
   "directories": {
@@ -8,7 +8,7 @@
     "test": "test"
   },
   "dependencies": {
-    "node-hid": "^0.4.0",
+    "node-hid": "^0.5.0",
     "colors": "^0.6",
     "joystick": "^0.1.1",
     "lodash": "^2.4.1"
