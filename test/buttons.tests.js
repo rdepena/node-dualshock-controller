@@ -9,21 +9,21 @@ describe('the Buttons component', function() {
     'use strict';
 
     var mockConfig = [{
-        "name": "buttonName",
-        "buttonBlock": 0,
-        "buttonValue": "0x08",
-        "analogPin": 1
-    }, {
-        "name": "dpadUp",
-        "buttonBlock": 5,
-        "buttonValue": "0x00",
-        "mask": "0xF"
-    }, {
-        "name": "dpadDown",
-        "buttonBlock": 5,
-        "buttonValue": "0x01",
-        "mask": "0xF"
-    }],
+            "name": "buttonName",
+            "buttonBlock": 0,
+            "buttonValue": "0x08",
+            "analogPin": 1
+        }, {
+            "name": "dpadUp",
+            "buttonBlock": 5,
+            "buttonValue": "0x00",
+            "mask": "0xF"
+        }, {
+            "name": "dpadDown",
+            "buttonBlock": 5,
+            "buttonValue": "0x01",
+            "mask": "0xF"
+        }],
         instance = [{
             name: 'process'
         }],

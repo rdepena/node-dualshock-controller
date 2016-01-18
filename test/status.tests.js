@@ -7,19 +7,19 @@ var Status = require('../lib/status'),
 
 describe('the status component', function() {
     var mockConfig = [{
-        "name": "chargingState",
-        "pin": 0,
-        "states": [{
-            "value": 0,
-            "state": "Charging"
-        }, {
-            "value": 2,
-            "state": "Charging"
-        }, {
-            "value": 3,
-            "state": "40%"
-        }]
-    }],
+            "name": "chargingState",
+            "pin": 0,
+            "states": [{
+                "value": 0,
+                "state": "Charging"
+            }, {
+                "value": 2,
+                "state": "Charging"
+            }, {
+                "value": 3,
+                "state": "40%"
+            }]
+        }],
         dataA = [0, 0],
         dataB = [0, 3],
         instance = [{
