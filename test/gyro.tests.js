@@ -9,10 +9,10 @@ describe('the Gyro component', function() {
     'use strict';
 
     var mockConfig = [{
-        name: "dirrection",
-        directionPin: 0,
-        valuePin: 1
-    }],
+            name: "dirrection",
+            directionPin: 0,
+            valuePin: 1
+        }],
         instance = [{
             name: 'process'
         }],
@@ -51,9 +51,9 @@ describe('the Gyro component', function() {
             gyro.process(dataA);
             assert.equal(spy.called, true);
             var expectedValue = {
-                direction: 1,
-                value: 125
-            },
+                    direction: 1,
+                    value: 125
+                },
                 spyArgument = spy.args[0][0];
 
             assert.equal(spyArgument.direction, expectedValue.direction);
@@ -65,9 +65,9 @@ describe('the Gyro component', function() {
             gyro.process(dataB);
             assert.equal(spy.called, true);
             var expectedValue = {
-                direction: 2,
-                value: -130
-            },
+                    direction: 2,
+                    value: -130
+                },
                 spyArgument = spy.args[0][0];
 
             assert.equal(spyArgument.direction, expectedValue.direction);

@@ -4,9 +4,9 @@ var assert = require('assert');
 
 describe('The Config component', function() {
     var mockConfig = {
-        vendorId: 1556,
-        productId: 616
-    },
+            vendorId: 1556,
+            productId: 616
+        },
         mockOptions = {
             config: 'dualShock3',
             accelerometerSmoothing: true,

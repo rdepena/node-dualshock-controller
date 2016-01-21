@@ -9,10 +9,10 @@ describe('the Analogs component', function() {
     'use strict';
 
     var mockConfig = [{
-        "name": "analog",
-        "x": 0,
-        "y": 1
-    }],
+            "name": "analog",
+            "x": 0,
+            "y": 1
+        }],
         instance = [{
             name: 'process'
         }],
@@ -70,9 +70,9 @@ describe('the Analogs component', function() {
             emitter.on('analog:move', spy);
             analogs.process(dataA);
             var expectedValue = {
-                x: 50,
-                y: 65
-            },
+                    x: 50,
+                    y: 65
+                },
                 spyArgument = spy.args[0][0];
 
             assert.equal(expectedValue.x, spyArgument.x);
