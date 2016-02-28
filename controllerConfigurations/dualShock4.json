@@ -17,12 +17,14 @@
             "joystickYNumber" : 5
         },
         {
-            "name" : "r2Analog",
-            "joystickXNumber" : 4
+            "name" : "l2Analog",
+            "x" : 100,
+            "joystickXNumber" : 3
         },
         {
-            "name" : "l2Analog",
-            "joystickXNumber" : 3
+            "name" : "r2Analog",
+            "x" : 101,
+            "joystickXNumber" : 4
         }
     ],
     "buttons" : [
