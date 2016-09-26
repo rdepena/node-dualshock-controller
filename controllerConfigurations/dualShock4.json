@@ -1,0 +1,168 @@
+{
+    "vendorId" : 1356,
+    "productId" : 1476,
+    "analogSticks" : [
+        {
+            "name" : "left",
+            "x" : 1,
+            "y" : 2,
+            "joystickXNumber" : 0,
+            "joystickYNumber" : 1
+        },
+        {
+            "name" : "right",
+            "x" : 3,
+            "y" : 4,
+            "joystickXNumber" : 2,
+            "joystickYNumber" : 5
+        },
+        {
+            "name" : "l2Analog",
+            "x" : 100,
+            "joystickXNumber" : 3
+        },
+        {
+            "name" : "r2Analog",
+            "x" : 101,
+            "joystickXNumber" : 4
+        }
+    ],
+    "buttons" : [
+        {
+            "name": "l2",
+            "buttonBlock": 6,
+            "buttonValue": "0x04",
+            "analogPin" : 8,
+            "joystickNumber": 6
+        },
+        {
+            "name": "r2",
+            "buttonBlock": 6,
+            "buttonValue": "0x08",
+            "analogPin" : 9,
+            "joystickNumber": 7
+        },
+        {
+            "name": "l1",
+            "buttonBlock": 6,
+            "buttonValue": "0x01",
+            "joystickNumber": 4
+        },
+        {
+            "name": "r1",
+            "buttonBlock": 6,
+            "buttonValue": "0x02",
+            "joystickNumber": 5
+        },
+        {
+            "name": "psxButton",
+            "buttonBlock": 7,
+            "buttonValue": "0x01",
+            "joystickNumber": 12
+        },
+        {
+            "name": "touchPad",
+            "buttonBlock": 7,
+            "buttonValue": "0x02",
+            "joystickNumber": 13
+        },
+        {
+            "name": "square",
+            "buttonBlock": 5,
+            "buttonValue": "0x10",
+            "joystickNumber": 0
+        },
+        {
+            "name": "triangle",
+            "buttonBlock": 5,
+            "buttonValue": "0x80",
+            "joystickNumber": 3
+        },
+        {
+            "name": "circle",
+            "buttonBlock": 5,
+            "buttonValue": "0x40",
+            "joystickNumber": 2
+        },
+        {
+            "name": "x",
+            "buttonBlock": 5,
+            "buttonValue": "0x20",
+            "joystickNumber": 1
+        },
+        {
+            "name": "dpadUp",
+            "buttonBlock": 5,
+            "buttonValue": "0x00",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadUpRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x01",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x02",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDownRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x03",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDown",
+            "buttonBlock": 5,
+            "buttonValue" : "0x04",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDownLeft",
+            "buttonBlock": 5,
+            "buttonValue" : "0x05",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadLeft",
+            "buttonBlock": 5,
+            "buttonValue": "0x06",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadUpLeft",
+            "buttonBlock": 5,
+            "buttonValue": "0x07",
+            "mask": "0xF"
+        },
+        {
+            "name": "share",
+            "buttonBlock": 6,
+            "buttonValue": "0x10",
+            "joystickNumber": 8
+        },
+        {
+            "name": "options",
+            "buttonBlock": 6,
+            "buttonValue": "0x20",
+            "joystickNumber": 9
+        },
+        {
+            "name": "leftStick",
+            "buttonBlock": 6,
+            "buttonValue": "0x40",
+            "joystickNumber": 10
+        },
+        {
+            "name": "rightStick",
+            "buttonBlock": 6,
+            "buttonValue": "0x80",
+            "joystickNumber": 11
+        }
+    ],
+    "motionInputs" : [],
+    "status" : []
+}
