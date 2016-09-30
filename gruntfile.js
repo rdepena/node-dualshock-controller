@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         jshint: {
             files: files,
             options: {
+                reporterOutput: "",
                 node: true,
                 globals: {
                     describe: true,
