@@ -32,8 +32,8 @@ describe('The Config component', function() {
         configB;
 
     beforeEach(function() {
-        configA = require('../lib/config');
-        configB = require('../lib/config');
+        configA = require('../src/config');
+        configB = require('../src/config');
     });
 
 

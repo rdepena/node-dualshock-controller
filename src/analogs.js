@@ -6,11 +6,9 @@ var dsutilities = require('./utilities'),
 
 //Proccess Analog stick events.
 var Analogs = function(controller) {
-
     var varianceThreshhold = 1,
-        outputSmoothing = new Smoothing(smoothInput),
-        analogSticks = config.getControllerConfig().analogSticks,
-        smoothInput = config.getOptions().analogStickSmoothing;
+        outputSmoothing = new Smoothing(config.getOptions().analogStickSmoothing),
+        analogSticks = config.getControllerConfig().analogSticks;
 
     //Private methods
     var processStick = function(analogStick, data) {
