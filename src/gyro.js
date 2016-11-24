@@ -8,9 +8,8 @@ var dsutilities = require('./utilities'),
 var motionProcessor = function(controller) {
 
     var varianceThreshhold = 1,
-        outputSmoothing = new Smoothing(smoothInput),
-        motionInputs = config.getControllerConfig().motionInputs,
-        smoothInput = config.getOptions().accelerometerSmoothing;
+        outputSmoothing = new Smoothing(config.getOptions().accelerometerSmoothing),
+        motionInputs = config.getControllerConfig().motionInputs;
 
     //generate event name aliases:
     motionInputs.forEach(function(motionAxis) {

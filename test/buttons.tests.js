@@ -1,9 +1,9 @@
 // Module dependencies.
-var Buttons = require('../lib/buttons'),
+var Buttons = require('../src/buttons'),
     assert = require('assert'),
     sinon = require('sinon'),
     EventEmitter = require('events').EventEmitter,
-    config = require('../lib/config');
+    config = require('../src/config');
 
 describe('the Buttons component', function() {
     'use strict';

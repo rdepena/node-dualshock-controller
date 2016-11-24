@@ -2,7 +2,10 @@
 var dualShock = require('./../lib/dualshock.js');
 
 //init the controller
-var dualShock3 = dualShock();
+var dualShock3 = dualShock({
+    analogStickSmoothing: true,
+    config: "dualShock3"
+});
 
 //for a client implementation we do not need this, this is only to test the inputs.
 var controllerConfiguration = require('./../controllerConfigurations/dualShock3');
