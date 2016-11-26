@@ -1,8 +1,7 @@
 'use strict';
 // Module dependencies.
 
-var config = require('./config'),
-    colors = require('colors');
+var config = require('./config');
 
 var unique = function unique(x) {
     var result = [];
@@ -23,7 +22,7 @@ module.exports = {
     },
     warn: function(message) {
         if (config.getOptions().logging) {
-            console.log(message.yellow);
+            console.log(message);
         }
     },
     generateEventPrefixAliases: function(eventPrefix) {
