@@ -1,5 +1,5 @@
 'use strict';
-var dualShock = require('./../lib/dualshock.js');
+var dualShock = require('./../src/dualshock.js');
 
 var dualShock4 = dualShock({
     config: "dualshock4-generic-driver"

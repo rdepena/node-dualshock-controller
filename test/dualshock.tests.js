@@ -1,6 +1,6 @@
 var assert = require('assert'),
     Emitter = require('events').EventEmitter,
-    config = require('../lib/config'),
+    config = require('../src/config'),
     mockery = require('mockery');
 
 function Device() {
@@ -70,7 +70,7 @@ describe('the DualShock component', function() {
     mockery.registerMock('node-hid', nodeHidMock);
 
     //once mockery is up we can require the dualshock module.
-    var DualShock = require('./../lib/dualshock.js'),
+    var DualShock = require('./../src/dualshock.js'),
         controller, device;
 
     before(function() {
