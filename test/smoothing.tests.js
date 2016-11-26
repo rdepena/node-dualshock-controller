@@ -1,5 +1,5 @@
 // Module dependencies.
-var Smoothing = require('../lib/smoothing'),
+var Smoothing = require('../src/smoothing'),
     assert = require('assert');
 
 describe('the smoothing component', function() {
