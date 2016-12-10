@@ -1,0 +1,150 @@
+{
+    "vendorId" : 1356,
+    "productId" : 2508,
+    "analogSticks" : [
+        {
+            "name" : "left",
+            "x" : 1,
+            "y" : 2
+        },
+        {
+            "name" : "right",
+            "x" : 3,
+            "y" : 4
+        }
+    ],
+    "buttons" : [
+        {
+            "name": "l2",
+            "buttonBlock": 6,
+            "buttonValue": "0x04",
+            "analogPin" : 8
+        },
+        {
+            "name": "r2",
+            "buttonBlock": 6,
+            "buttonValue": "0x08",
+            "analogPin" : 9
+        },
+        {
+            "name": "l1",
+            "buttonBlock": 6,
+            "buttonValue": "0x01"
+        },
+        {
+            "name": "r1",
+            "buttonBlock": 6,
+            "buttonValue": "0x02"
+        },
+        {
+            "name": "leftAnalogBump",
+            "buttonBlock": 6,
+            "buttonValue": "0x04"
+        },
+        {
+            "name": "rightAnalogBump",
+            "buttonBlock": 6,
+            "buttonValue": "0x08"
+        },
+        {
+            "name": "psxButton",
+            "buttonBlock": 7,
+            "buttonValue": "0x01"
+        },
+        {
+            "name": "touchPad",
+            "buttonBlock": 7,
+            "buttonValue": "0x02"
+        },
+        {
+            "name": "square",
+            "buttonBlock": 5,
+            "buttonValue": "0x10"
+        },
+        {
+            "name": "triangle",
+            "buttonBlock": 5,
+            "buttonValue": "0x80"
+        },
+        {
+            "name": "circle",
+            "buttonBlock": 5,
+            "buttonValue": "0x40"
+        },
+        {
+            "name": "x",
+            "buttonBlock": 5,
+            "buttonValue": "0x20"
+        },
+        {
+            "name": "dpadUp",
+            "buttonBlock": 5,
+            "buttonValue": "0x00",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadUpRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x01",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x02",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDownRight",
+            "buttonBlock": 5,
+            "buttonValue": "0x03",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDown",
+            "buttonBlock": 5,
+            "buttonValue" : "0x04",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadDownLeft",
+            "buttonBlock": 5,
+            "buttonValue" : "0x05",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadLeft",
+            "buttonBlock": 5,
+            "buttonValue": "0x06",
+            "mask": "0xF"
+        },
+        {
+            "name": "dpadUpLeft",
+            "buttonBlock": 5,
+            "buttonValue": "0x07",
+            "mask": "0xF"
+        },
+        {
+            "name": "share",
+            "buttonBlock": 6,
+            "buttonValue": "0x10"
+        },
+        {
+            "name": "options",
+            "buttonBlock": 6,
+            "buttonValue": "0x20"
+        },
+        {
+            "name": "leftStick",
+            "buttonBlock": 6,
+            "buttonValue": "0x40"
+        },
+        {
+            "name": "rightStick",
+            "buttonBlock": 6,
+            "buttonValue": "0x80"
+        }
+    ],
+    "motionInputs" : [],
+    "status" : []
+}
