@@ -13,11 +13,8 @@ node-dualshock-controller
 ### Run npm command: ###
 
     $ npm install dualshock-controller
-
-
-
-Guide
-
+    
+    
 ### Connecting the controller
 
 Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
@@ -70,7 +67,7 @@ controller.on('square:release', () => console.log('square release'));
 //}
 
 //right-left movement
-    controller.on('rightLeft:motion', data => console.log(data));
+controller.on('rightLeft:motion', data => console.log(data));
 
 //forward-back movement
 controller.on('forwardBackward:motion', data => console.log(data));
