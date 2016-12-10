@@ -10,15 +10,12 @@ node-dualshock-controller
 
     * libudev-dev
 
-### Run npm command:
+### Run npm command: ###
 
     $ npm install dualshock-controller
-
-
-
-## Guide
-
-###Connecting the controller
+    
+    
+### Connecting the controller
 
 Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
 
@@ -27,7 +24,7 @@ Via Bluetooth: just make sure you pair with the controller via bluetooth.
 Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.
 
 
-###Use the DualShock library
+### Use the DualShock library
 
 ~~~~ js
 var dualShock = require('dualshock-controller');
@@ -46,26 +43,21 @@ var controller = dualShock(
     });
 
 //make sure you add an error event handler
-controller.on('error', function(data) {
-  //...someStuffDidNotWork();
-});
+controller.on('error', err => console.log(err));
+
+//connect the controller
+controller.connect();
 
 //add event handlers:
-controller.on('left:move', function(data) {
-  //...doStuff();
-});
-controller.on('right:move', function(data) {
-  //...doStuff();
-});
-controller.on('connected', function(data) {
-  //...doStuff();
-});
-controller.on('square:press', function (data) {
-  //...doStuff();
-});
-controller.on('square:release', function (data) {
-  //...doStuff();
-});
+controller.on('left:move', data => console.log('left Moved: ' + data.x + ' | ' + data.y));
+
+controller.on('right:move', data => console.log('right Moved: ' + data.x + ' | ' + data.y));
+
+controller.on('connected', () => console.log('connected'));
+
+controller.on('square:press', ()=> console.log('square press'));
+
+controller.on('square:release', () => console.log('square release'));
 
 //sixasis motion events:
 //the object returned from each of the movement events is as follows:
@@ -75,39 +67,27 @@ controller.on('square:release', function (data) {
 //}
 
 //right-left movement
-controller.on('rightLeft:motion', function (data) {
-    //...doStuff();
-});
+controller.on('rightLeft:motion', data => console.log(data));
 
 //forward-back movement
-controller.on('forwardBackward:motion', function (data) {
-    //...doStuff();
-});
+controller.on('forwardBackward:motion', data => console.log(data));
+
 //up-down movement
-controller.on('upDown:motion', function (data) {
-    //...doStuff();
-});
+controller.on('upDown:motion', data => console.log(data));
 
 //controller status
 //as of version 0.6.2 you can get the battery %, if the controller is connected and if the controller is charging
-controller.on('battery:change', function (value) {
-     //...doStuff();
-});
-controller.on('connection:change', function (value) {
-     //...doStuff();
-});
-controller.on('charging:change', function (value) {
-     //...doStuff();
-});
+controller.on('battery:change', data => console.log(data));
 
-//connect the controller
-controller.connect();
+controller.on('connection:change', data => console.log(data));
+
+controller.on('charging:change', data => console.log(data));
 
 ~~~~
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Ricardo de Pena
+Copyright (c) 2016 Ricardo de Pena
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

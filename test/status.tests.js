@@ -1,9 +1,9 @@
 // Module dependencies.
-var Status = require('../lib/status'),
+var Status = require('../src/status'),
     assert = require('assert'),
     sinon = require('sinon'),
     EventEmitter = require('events').EventEmitter,
-    config = require('../lib/config');
+    config = require('../src/config');
 
 describe('the status component', function() {
     var mockConfig = [{

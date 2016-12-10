@@ -1,6 +1,6 @@
 var files = ['gruntfile.js',
-    'lib/*.js',
-    'lib/inputProcessors/*.js',
+    'src/*.js',
+    'src/inputProcessors/*.js',
     'test/*.js',
     'examples/*.js'
 ];
