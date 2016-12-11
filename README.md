@@ -13,8 +13,8 @@ node-dualshock-controller
 ### Run npm command: ###
 
     $ npm install dualshock-controller
-    
-    
+
+
 ### Connecting the controller
 
 Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
@@ -47,6 +47,17 @@ controller.on('error', err => console.log(err));
 
 //connect the controller
 controller.connect();
+
+//control rumble and light settings for the controller
+controller.setExtras({
+  rumbleLeft:  0,   // 0-255 (Rumble left intensity)
+  rumbleRight: 0,   // 0-255 (Rumble right intensity)
+  red:         0,   // 0-255 (Red intensity)
+  green:       75,  // 0-255 (Blue intensity)
+  blue:        225, // 0-255 (Green intensity)
+  flashOn:     40,  // 0-255 (Flash on time)
+  flashOff:    10   // 0-255 (Flash off time)
+});
 
 //add event handlers:
 controller.on('left:move', data => console.log('left Moved: ' + data.x + ' | ' + data.y));
