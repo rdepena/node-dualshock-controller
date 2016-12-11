@@ -156,6 +156,23 @@ var Controller = function() {
         handleException(ex);
     }
 
+    // Used to set controller rumble and light
+    this.setExtras = function(data) {
+        device.write([
+            0x05,
+            0xff,
+            0x04,
+            0x00,
+            data.rumbleLeft  || 0,
+            data.rumbleRight || 0,
+            data.red         || 0,
+            data.green       || 0,
+            data.blue        || 0,
+            data.flashOn     || 0,
+            data.flashOff    || 0
+        ]);
+    };
+
     //subscribe to the exit event:
     process.on('exit', this.disconnect.bind(this));
 };
