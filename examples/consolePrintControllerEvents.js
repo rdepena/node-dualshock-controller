@@ -7,6 +7,7 @@ var printcontrollerEvents = function(controller, controllerConfiguration) {
     controller.on('right:move', function(data) {
         console.log('right Moved');
         console.log(data);
+        controller.rumble(data.y, data.x);
     });
     controller.on('connected', function() {
         console.log('connected');
