@@ -24,7 +24,7 @@ Via Bluetooth: just make sure you pair with the controller via bluetooth.
 Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.
 
 
-##### Use the DualShock library #####
+##### Use the DualShock library
 
 ~~~~ js
 var dualShock = require('dualshock-controller');
