@@ -146,5 +146,19 @@
         }
     ],
     "motionInputs" : [],
-    "status" : []
+    "status" : [],
+    "output": {
+        "defaultBuffer":[
+            5,255,4,0,0,0,0,0,0,0,0
+        ],
+        "indexes": {
+            "rumbleLeft": 4,
+            "rumbleRight": 5,
+            "red": 6,
+            "green": 7,
+            "blue": 8,
+            "flashOn": 9,
+            "flashOff": 10
+        }
+    }
 }

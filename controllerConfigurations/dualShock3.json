@@ -237,7 +237,7 @@
         ],
         "indexes": {
             "rumbleLeft": 3,
-            "rumbleRight": 4,
+            "rumbleRight": 5,
             "led": 10
         }
     }
