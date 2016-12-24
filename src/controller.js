@@ -122,6 +122,15 @@ var Controller = function() {
         dsutilities.warn('node dualshock disconnecting'.yellow);
     };
 
+    this.setExtras = function(data) {
+        var buff = controllerConfig.output.defaultBuffer.slice();
+        var indexes = controllerConfig.output.indexes;
+        Object.keys(data).forEach(k => {
+            buff[indexes[k]] = data[k];
+        });
+        device.write(buff);
+    };
+
     //connect to the controller.
     try {
 
