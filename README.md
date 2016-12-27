@@ -13,8 +13,8 @@ node-dualshock-controller
 ### Run npm command: ###
 
     $ npm install dualshock-controller
-    
-    
+
+
 ### Connecting the controller
 
 Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
@@ -24,7 +24,7 @@ Via Bluetooth: just make sure you pair with the controller via bluetooth.
 Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.
 
 
-### Use the DualShock library
+##### Use the DualShock library
 
 ~~~~ js
 var dualShock = require('dualshock-controller');
@@ -47,6 +47,24 @@ controller.on('error', err => console.log(err));
 
 //connect the controller
 controller.connect();
+
+//DualShock 4 control rumble and light settings for the controller
+controller.setExtras({
+  rumbleLeft:  0,   // 0-255 (Rumble left intensity)
+  rumbleRight: 0,   // 0-255 (Rumble right intensity)
+  red:         0,   // 0-255 (Red intensity)
+  green:       75,  // 0-255 (Blue intensity)
+  blue:        225, // 0-255 (Green intensity)
+  flashOn:     40,  // 0-255 (Flash on time)
+  flashOff:    10   // 0-255 (Flash off time)
+});
+
+//DualShock 3 control rumble and light settings for the controller
+controller.setExtras({
+  rumbleLeft:  0,   // 0-1 (Rumble left on/off)
+  rumbleRight: 0,   // 0-255 (Rumble right intensity)
+  led: 2 // 2 | 4 | 8 | 16 (Leds 1-4 on/off, bitmasked)
+});
 
 //add event handlers:
 controller.on('left:move', data => console.log('left Moved: ' + data.x + ' | ' + data.y));

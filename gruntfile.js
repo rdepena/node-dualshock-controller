@@ -14,6 +14,7 @@ module.exports = function(grunt) {
             files: files,
             options: {
                 reporterOutput: "",
+                esnext: true,
                 node: true,
                 globals: {
                     describe: true,
