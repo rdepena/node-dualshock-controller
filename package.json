@@ -9,7 +9,6 @@
     "src": "src"
   },
   "dependencies": {
-    "joystick": "^0.1.1",
     "node-hid": "^0.5.0"
   },
   "devDependencies": {
@@ -29,6 +28,7 @@
     "test": "grunt test",
     "coverage": "istanbul cover _mocha"
   },
+  "engines": { "node": ">=6.9.2" },
   "repository": {
     "type": "git",
     "url": "https://github.com/rdepena/node-dualshock-controller.git"

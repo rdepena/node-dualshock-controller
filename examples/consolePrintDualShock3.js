@@ -1,11 +1,12 @@
 'use strict';
 var dualShock = require('./../src/dualshock.js');
+var dualShock3;
 
 //init the controller
-var dualShock3 = dualShock({
+dualShock3 = dualShock({
     analogStickSmoothing: false,
     config: "dualShock3",
-    forceNodeHid: true
+    logging: true
 });
 
 // //for a client implementation we do not need this, this is only to test the inputs.

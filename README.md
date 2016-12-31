@@ -45,9 +45,6 @@ var controller = dualShock(
 //make sure you add an error event handler
 controller.on('error', err => console.log(err));
 
-//connect the controller
-controller.connect();
-
 //DualShock 4 control rumble and light settings for the controller
 controller.setExtras({
   rumbleLeft:  0,   // 0-255 (Rumble left intensity)

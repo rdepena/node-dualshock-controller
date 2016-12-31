@@ -46,7 +46,8 @@ var config = {
             value: 3,
             state: '40%'
         }]
-    }]
+    }],
+    output: []
 };
 
 var analogs = config.analogSticks;

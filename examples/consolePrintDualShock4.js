@@ -3,7 +3,7 @@ var dualShock = require('./../src/dualshock.js');
 
 var dualShock4 = dualShock({
     config: "dualShock4",
-    forceNodeHid: true
+    logging: true
 });
 
 //for a client implementation we do not need this, this is only to test the inputs.
