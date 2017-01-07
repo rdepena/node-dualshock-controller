@@ -6,27 +6,20 @@ node-dualshock-controller
 
 ## Installation:
 
-### Linux Requirements:
+#### OSX/Windows:
 
-    * libudev-dev
+```bash
+npm install dualshock-controller
+```
+#### Linux:
 
-### Run npm command: ###
+Review the [Linux support](#linux-support) section.
 
-    $ npm install dualshock-controller
+## Using the DualShock library
 
+`Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.`
 
-### Connecting the controller
-
-Obviously the controller needs to be connected but you can connect the dualshock controllers in two ways:
-
-Via Bluetooth: just make sure you pair with the controller via bluetooth.
-
-Via USB: once the controller is connected to the computer make sure you press the playstation button located in the center of the controller. Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.
-
-
-##### Use the DualShock library
-
-~~~~ js
+~~~~ javascript
 var dualShock = require('dualshock-controller');
 
 //pass options to init the controller.
@@ -99,6 +92,66 @@ controller.on('connection:change', data => console.log(data));
 controller.on('charging:change', data => console.log(data));
 
 ~~~~
+
+## <a name="linux-support"></a> Linux support:
+
+In order to provide Rumble/Gyro and LED support for all platforms the linux specific joystick implementation has been removed. This means you will need to:
+
+* [Install node-hid build requirements](#node-hid-build)
+* [Install node-hid with hidraw support](#node-hid-hidraw)
+* [create udev rules](#create-udev-rules)
+
+#### <a name="node-hid-build"></a> Install node-hid build requirements
+
+To build node-hid you will need to install:
+
+* libudev-dev
+* libusb-1.0-0
+* libusb-1.0-0-dev
+* build-essential
+* git
+* node-gyp
+* node-pre-gyp
+
+Using apt-get:
+
+```bash
+sudo apt-get install libudev-dev libusb-1.0-0 libusb-1.0-0-dev build-essential git
+```
+
+```bash
+npm install -g node-gyp node-pre-gyp
+```
+
+#### <a name="node-hid-hidraw"></a> Install node-hid with hidraw support
+
+Once you have run the installation scripts above you can install the node-dualshock module, then replace the installed node-hid with hidraw support enabled node-hid:
+
+```bash
+npm install dualshock-controller
+```
+
+```bash
+npm install node-hid --driver=hidraw
+```
+
+#### <a name="create-udev-rules"></a> Create udev rules
+
+You will need to create a udev rule to be able to access the hid stream as a non root user.
+
+Write the following file in `/etc/udev/rules.d/61-dualshock.rules`
+
+```
+SUBSYSTEM=="input", GROUP="input", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0268", MODE:="666", GROUP="plugdev"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="plugdev"
+
+SUBSYSTEM=="input", GROUP="input", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="05c4", MODE:="666", GROUP="plugdev"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="plugdev"
+```
+
+Reload the rules `sudo udevadm control --reload-rules`, then disconnect/connect the controller.
 
 The MIT License (MIT)
 
