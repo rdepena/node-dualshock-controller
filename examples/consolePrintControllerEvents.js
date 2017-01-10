@@ -56,8 +56,6 @@ var printcontrollerEvents = function(controller, controllerConfiguration) {
     controller.on('upDown' + ':motion', function(data) {
         motion('upDown', data);
     });
-    //once everything is ready we call connect()
-    controller.connect();
 };
 
 module.exports = printcontrollerEvents;

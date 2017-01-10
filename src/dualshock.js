@@ -1,5 +1,5 @@
 // Module dependencies.
-var Controller = require('./controller.js'),
+var Controller = require('./controller'),
     config = require('./config');
 
 // This is the app entry point.

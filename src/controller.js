@@ -1,5 +1,5 @@
 // Module dependencies.
-var util = require('util'),
+const util = require('util'),
     dsutilities = require('./utilities'),
     Emitter = require('events').EventEmitter,
     Gyro = require('./gyro'),
@@ -7,23 +7,22 @@ var util = require('util'),
     Buttons = require('./buttons'),
     Status = require('./status'),
     HID = require('node-hid'),
-    LinuxConnector = require('./linuxConnector'),
     config = require('./config');
 
 //generic controller object, it will need a controller Configuration with a buttons array passed into its connect function.
-var Controller = function() {
+const Controller = function() {
     'use strict';
     Emitter.call(this);
 
-    var device = null,
-        devices = null,
-        //get the options and controller configuration.
-        controllerConfig = config.getControllerConfig(),
+    const controllerConfig = config.getControllerConfig(),
         options = config.getOptions(),
+        indexes = controllerConfig.output.indexes,
         analogs = new Analogs(this),
         buttons = new Buttons(this),
         gyro = new Gyro(this),
         status = new Status(this);
+
+    let device = null;
 
     [{
         type: 'analogSticks',
@@ -59,8 +58,8 @@ var Controller = function() {
             initialValue: ''
         }]
     }].forEach(function(setup) {
-        var entities = controllerConfig[setup.type];
-        var properties = setup.properties;
+        const entities = controllerConfig[setup.type],
+            properties = setup.properties;
 
         if (entities.length) {
             entities.forEach(function(entity) {
@@ -73,7 +72,7 @@ var Controller = function() {
 
     //Private methods
     //emit an error event or log it to the console.
-    var handleException = function(ex) {
+    const handleException = function(ex) {
         //if exception was generated within our stream
         if (this && this.emit) {
             this.emit('error', ex);
@@ -84,7 +83,7 @@ var Controller = function() {
     };
 
     //process data from HID connected device.
-    var processFrame = function(data) {
+    const processFrame = function(data) {
         if (controllerConfig.motionInputs) {
             gyro.process(data);
         }
@@ -99,19 +98,13 @@ var Controller = function() {
         }
     };
 
-    var isController = function(device) {
+    const isController = function(device) {
         return device.vendorId == controllerConfig.vendorId && device.productId == controllerConfig.productId;
     };
 
-    var isValidPath = function(device) {
-        var path = device.path.toLowerCase();
-        return path.match('bluetooth') || path.match('usb');
-    };
-
     // Public methods
-    //initiate the HID connection with the device, use the vendorId and product Id to identify the controller
     this.connect = function() {
-        dsutilities.warn('connect method is deprecated, controller now connects upon declaration.'.yellow);
+        dsutilities.warn('connect method is deprecated, controller now connects upon declaration.');
     };
 
     this.disconnect = function() {
@@ -119,53 +112,38 @@ var Controller = function() {
             device.close();
         }
         this.emit('disconnecting');
-        dsutilities.warn('node dualshock disconnecting'.yellow);
+        dsutilities.warn('node dualshock disconnecting');
     };
 
     // Used to set controller rumble and light
     this.setExtras = function(data) {
-        var buff = controllerConfig.output.defaultBuffer.slice();
-        var indexes = controllerConfig.output.indexes;
 
-        Object.keys(data).forEach(function(k) {
+        let buff = controllerConfig.output.defaultBuffer.slice();
+
+        Object.keys(data).forEach(k => {
             buff[indexes[k]] = data[k];
         });
         device.write(buff);
     };
 
     //connect to the controller.
-    try {
+    if (typeof options.device === 'undefined') {
+        dsutilities.warn('node dualshock connecting');
 
-        //the user has specified that we need to force hid
-        if (options.forceNodeHid) {
-            device = new HID.HID(controllerConfig.vendorId, controllerConfig.productId);
+        const deviceMeta = HID.devices()
+            .filter(isController)[0];
+        if (deviceMeta) {
+            device = new HID.HID(deviceMeta.path);
         } else {
-            if (typeof options.device === 'undefined') {
-                dsutilities.warn('node dualshock connecting'.yellow);
-
-                devices = HID.devices()
-                    .filter(isController)
-                    .filter(isValidPath);
-
-                //no suitable node-hid device found, lets try linux native.
-                if (!devices.length) {
-                    dsutilities.warn('no suitable node-hid device found, lets try linux native'.yellow);
-                    device = new LinuxConnector();
-                } else {
-                    device = new HID.HID(devices[0].path);
-                }
-            } else {
-                // Allow user-specified device
-                device = options.device;
-
-            }
+            handleException(new Error(`device with VID:${controllerConfig.vendorId} PID:${controllerConfig.productId} not found`));
         }
-        //once the device is connected we can subscribe to the node-hid data event.
-        device.on('data', processFrame.bind(this));
 
-    } catch (ex) {
-        handleException(ex);
+    } else {
+        // Allow user-specified device
+        device = options.device;
     }
+
+    device.on('data', processFrame.bind(this));
 
     //subscribe to the exit event:
     process.on('exit', this.disconnect.bind(this));

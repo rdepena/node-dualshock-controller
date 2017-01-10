@@ -5,7 +5,8 @@ var assert = require('assert');
 describe('The Config component', function() {
     var mockConfig = {
             vendorId: 1556,
-            productId: 616
+            productId: 616,
+            output: []
         },
         mockOptions = {
             config: 'dualShock3',
