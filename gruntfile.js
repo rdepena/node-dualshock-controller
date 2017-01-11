@@ -1,4 +1,4 @@
-var files = ['gruntfile.js',
+const files = ['gruntfile.js',
     'src/*.js',
     'src/inputProcessors/*.js',
     'test/*.js',
