@@ -14,16 +14,18 @@
     "grunt-mocha-test": "^0.13.2",
     "mocha": "^3.2.0",
     "sinon": "^1.8",
-    "istanbul": "^0.4.5",
+    "nyc": "^10.0.0",
     "grunt-jsbeautifier": "^0.2.7",
     "jshint": "^2.5.0",
     "mockery": "^2.0.0"
   },
   "scripts": {
     "test": "grunt test",
-    "coverage": "istanbul cover _mocha"
+    "coverage": "nyc npm test"
   },
-  "engines": { "node": ">=6.9.2" },
+  "engines": {
+    "node": ">=6.9.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rdepena/node-dualshock-controller.git"
