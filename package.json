@@ -1,34 +1,31 @@
 {
   "name": "dualshock-controller",
   "version": "1.0.1",
-  "description": "node library for dual shock controllers",
+  "description": "Eventing API layer over HID for the Sony DualShock 3 and DualShock 4 controllers ",
   "main": "./src/dualshock.js",
-  "directories": {
-    "example": "examples",
-    "test": "test",
-    "src": "src"
-  },
   "dependencies": {
     "node-hid": "^0.5.0"
   },
   "devDependencies": {
-    "grunt": "^0.4",
+    "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-jshint": "^0.10",
-    "grunt-contrib-watch": "^0.6",
-    "grunt-mocha-test": "^0.10",
-    "mocha": "^1.17",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-test": "^0.13.2",
+    "mocha": "^3.2.0",
     "sinon": "^1.8",
-    "istanbul": "^0.2",
+    "nyc": "^10.0.0",
     "grunt-jsbeautifier": "^0.2.7",
     "jshint": "^2.5.0",
-    "mockery": "^1.4.0"
+    "mockery": "^2.0.0"
   },
   "scripts": {
     "test": "grunt test",
-    "coverage": "istanbul cover _mocha"
+    "coverage": "nyc npm test"
   },
-  "engines": { "node": ">=6.9.2" },
+  "engines": {
+    "node": ">=6.9.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rdepena/node-dualshock-controller.git"
@@ -36,7 +33,6 @@
   "author": "ricardo de pena",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "ec07ab438dd6cd129000b285f33d8be7c59342b6",
   "keywords": [
     "ps3",
     "controller",
