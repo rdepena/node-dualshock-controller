@@ -144,6 +144,7 @@ const Controller = function() {
     }
 
     device.on('data', processFrame.bind(this));
+    device.on('error', handleException.bind(this));
 
     //subscribe to the exit event:
     process.on('exit', this.disconnect.bind(this));
