@@ -132,7 +132,7 @@ npm install dualshock-controller
 ```
 
 ```bash
-npm install node-hid --driver=hidraw
+npm install node-hid --driver=hidraw --build-from-source
 ```
 
 #### <a name="create-udev-rules"></a> Create udev rules

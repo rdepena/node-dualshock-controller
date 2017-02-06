@@ -7,7 +7,8 @@ const util = require('util'),
     Buttons = require('./buttons'),
     Status = require('./status'),
     HID = require('node-hid'),
-    config = require('./config');
+    config = require('./config'),
+    TouchPad = require('./touch_pad');
 
 //generic controller object, it will need a controller Configuration with a buttons array passed into its connect function.
 const Controller = function() {
@@ -20,7 +21,8 @@ const Controller = function() {
         analogs = new Analogs(this),
         buttons = new Buttons(this),
         gyro = new Gyro(this),
-        status = new Status(this);
+        status = new Status(this),
+        touchPad = new TouchPad(this);
 
     let device = null;
 
@@ -95,6 +97,9 @@ const Controller = function() {
         }
         if (controllerConfig.status) {
             status.process(data);
+        }
+        if (controllerConfig.touchPad) {
+            touchPad.process(data);
         }
     };
 
