@@ -15,16 +15,13 @@ module.exports = function TouchPad(controller) {
     const touchPad = config.getControllerConfig().touchPad;
     let pBuffer = {};
 
-    function isActive(buffer, tpAxis) {
+    function processIsActive(buffer, tpAxis) {
         const active = buffer[tpAxis.activePin] < 128;
         const axisBuffer = pBuffer[tpAxis.name];
+        const evt = active ? 'active' : 'inactive';
 
         if (active !== axisBuffer.active) {
-            if (active) {
-                controller.emit(`touchpad:${tpAxis.name}:active`);
-            } else {
-                controller.emit(`touchpad:${tpAxis.name}:inactive`);
-            }
+            controller.emit(`touchpad:${tpAxis.name}:${evt}`);
         }
 
         axisBuffer.active = active;
@@ -48,7 +45,7 @@ module.exports = function TouchPad(controller) {
                 pBuffer[touchPad[i].name] = genpBufferFromConf(touchPad[i]);
             }
 
-            isActive(buffer, touchPad[i]);
+            processIsActive(buffer, touchPad[i]);
             processData(buffer, touchPad[i]);
         }
     };

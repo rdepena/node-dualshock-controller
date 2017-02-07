@@ -8,7 +8,7 @@ const util = require('util'),
     Status = require('./status'),
     HID = require('node-hid'),
     config = require('./config'),
-    TouchPad = require('./touch_pad');
+    TouchPad = require('./touchpad');
 
 //generic controller object, it will need a controller Configuration with a buttons array passed into its connect function.
 const Controller = function() {
