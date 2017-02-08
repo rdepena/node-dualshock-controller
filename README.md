@@ -2,7 +2,7 @@ node-dualshock-controller
 =========================
 [![Build Status](https://travis-ci.org/rdepena/node-dualshock-controller.png?branch=master)](https://travis-ci.org/rdepena/node-dualshock-controller) [![Code Climate](https://codeclimate.com/github/rdepena/node-dualshock-controller.png)](https://codeclimate.com/github/rdepena/node-dualshock-controller)
 
-`dualshock-controller` is a node library that exposes events from a ps3 (ps4 partially supported) dualshock controller connected.
+`dualshock-controller` Eventing API layer over HID for the Sony DualShock 3 and DualShock 4 controllers
 
 ## Installation:
 
@@ -168,7 +168,7 @@ Reload the rules `sudo udevadm control --reload-rules`, then disconnect/connect 
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Ricardo de Pena
+Copyright (c) 2017 Ricardo de Pena
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
