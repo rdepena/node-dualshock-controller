@@ -74,6 +74,19 @@ controller.on('square:release', () => console.log('square release'));
 //    value : values will be from 0 to 120 for directions right, forward and up and from 0 to -120 for left, backwards and down.
 //}
 
+//DualShock 4 TouchPad
+//finger 1 is x1 finger 2 is x2
+controller.on('touchpad:x1:active', () => console.log('touchpad one finger active'));
+
+controller.on('touchpad:x2:active', () => console.log('touchpad two fingers active'));
+
+controller.on('touchpad:x2:inactive', () => console.log('touchpad back to single finger'));
+
+controller.on('touchpad:x1', data => console.log('touchpad x1:', data.x, data.y));
+
+controller.on('touchpad:x2', data => console.log('touchpad x2:', data.x, data.y));
+
+
 //right-left movement
 controller.on('rightLeft:motion', data => console.log(data));
 
@@ -132,7 +145,7 @@ npm install dualshock-controller
 ```
 
 ```bash
-npm install node-hid --driver=hidraw
+npm install node-hid --driver=hidraw --build-from-source
 ```
 
 #### <a name="create-udev-rules"></a> Create udev rules
