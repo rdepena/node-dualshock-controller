@@ -1,13 +1,13 @@
 These json files are used to map the controller:
 =========================
 
-##To add a new controller:
+## To add a new controller:
 Use DeviceDiscoveryHelp.js in the examples folder, using node-hid you can obtain the values you need to create a controller.json file and leverage the library to wire it up.
 
-###To connect the right controller
+### To connect the right controller
 the vendorId and the productId need to be set to the right values, you can use node-hid to determine what these are.
 
-###Analogs are mapped as:
+### Analogs are mapped as:
 ~~~~ js
 "analogSticks" : [
     {
@@ -22,7 +22,7 @@ the vendorId and the productId need to be set to the right values, you can use n
     }
 ]
 
-###Buttons are usually grouped by a block but should be added as:
+### Buttons are usually grouped by a block but should be added as:
 
 ~~~~ js
 "buttons" : [
