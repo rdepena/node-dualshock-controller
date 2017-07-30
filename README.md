@@ -32,7 +32,7 @@ var controller = dualShock(
         //config: "dualshock4-generic-driver",
         //if the above configuration doesn't work for you,
         //try uncommenting the following line instead.
-        config: "dualshock4-alternate-driver"
+        //config: "dualshock4-alternate-driver"
         //if using ds4 comment this line.
         config: "dualShock3",
         //smooths the output from the acelerometers (moving averages) defaults to true
