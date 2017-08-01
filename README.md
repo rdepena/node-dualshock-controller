@@ -19,6 +19,9 @@ Review the [Linux support](#linux-support) section.
 
 `Important: THE CONTROLLER WILL NOT SEND ANY DATA IF YOU DO NOT PRESS THE PS BUTTON.`
 
+Also, to use the touchpad, rumble and LED capabilities of the controller you
+must connect the controller to your computer using a micro-USB cable.
+
 ~~~~ javascript
 var dualShock = require('dualshock-controller');
 
@@ -27,12 +30,15 @@ var controller = dualShock(
     {
         //you can use a ds4 by uncommenting this line.
         //config: "dualshock4-generic-driver",
+        //if the above configuration doesn't work for you,
+        //try uncommenting the following line instead.
+        //config: "dualshock4-alternate-driver"
         //if using ds4 comment this line.
-        config : "dualShock3",
+        config: "dualShock3",
         //smooths the output from the acelerometers (moving averages) defaults to true
-        accelerometerSmoothing : true,
+        accelerometerSmoothing: true,
         //smooths the output from the analog sticks (moving averages) defaults to false
-        analogStickSmoothing : false
+        analogStickSmoothing: false
     });
 
 //make sure you add an error event handler
