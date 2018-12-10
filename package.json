@@ -1,10 +1,10 @@
 {
   "name": "dualshock-controller",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Eventing API layer over HID for the Sony DualShock 3 and DualShock 4 controllers ",
   "main": "./src/dualshock.js",
   "dependencies": {
-    "node-hid": "^0.5.0"
+    "node-hid": "^0.7.4"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
