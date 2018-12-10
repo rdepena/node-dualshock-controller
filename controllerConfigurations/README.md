@@ -8,7 +8,8 @@ Use DeviceDiscoveryHelp.js in the examples folder, using node-hid you can obtain
 the vendorId and the productId need to be set to the right values, you can use node-hid to determine what these are.
 
 ### Analogs are mapped as:
-~~~~ js
+
+```js
 "analogSticks" : [
     {
         "name" : "left",
@@ -21,10 +22,11 @@ the vendorId and the productId need to be set to the right values, you can use n
         "y" : 8
     }
 ]
+```
 
 ### Buttons are usually grouped by a block but should be added as:
 
-~~~~ js
+```js
 "buttons" : [
     {
         "name": name of the button used for events,
@@ -33,3 +35,4 @@ the vendorId and the productId need to be set to the right values, you can use n
         "analogPin" : int representing the pin used for analog.
     },
 ]
+```
