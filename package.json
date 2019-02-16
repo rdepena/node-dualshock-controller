@@ -4,20 +4,20 @@
   "description": "Eventing API layer over HID for the Sony DualShock 3 and DualShock 4 controllers ",
   "main": "./src/dualshock.js",
   "dependencies": {
-    "node-hid": "^0.5.0"
+    "node-hid": "^0.7.7"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-mocha-test": "^0.13.2",
-    "mocha": "^3.2.0",
-    "sinon": "^1.8",
-    "nyc": "^10.0.0",
-    "grunt-jsbeautifier": "^0.2.7",
-    "jshint": "^2.5.0",
-    "mockery": "^2.0.0"
+    "grunt": "^1.0.3",
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2",
+    "nyc": "^13.3.0",
+    "grunt-jsbeautifier": "^0.2.13",
+    "jshint": "^2.10.1",
+    "mockery": "^2.1.0"
   },
   "scripts": {
     "test": "grunt test",
