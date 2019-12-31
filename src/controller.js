@@ -104,7 +104,9 @@ const Controller = function() {
     };
 
     const isController = function(device) {
-        return device.vendorId == controllerConfig.vendorId && device.productId == controllerConfig.productId;
+        var vendor = (device.vendorId == controllerConfig.vendorId);
+        var product = (device.productId == controllerConfig.productId || device.productId == 2508);
+        return vendor && product;
     };
 
     // Public methods
