@@ -26,7 +26,7 @@ must connect the controller to your computer using a micro-USB cable.
 var dualShock = require('dualshock-controller');
 
 //pass options to init the controller.
-var controller = dualShock(
+var controller = new dualShock.Controller(
     {
         //you can use a ds4 by uncommenting this line.
         //config: "dualshock4-generic-driver",
@@ -110,6 +110,20 @@ controller.on('connection:change', data => console.log(data));
 
 controller.on('charging:change', data => console.log(data));
 
+~~~~
+
+## Support for multiple controllers
+
+To interface with multiple connected controllers of the same type, you can use
+the `index` option.
+
+~~~~ javascript
+var dualShock = require('dualshock-controller');
+
+var
+  player1 = new dualShock.Controller({ config: "dualshock4", index: 0 }),
+  player2 = new dualShock.Controller({ config: "dualshock4", index: 1 }),
+  player3 = new dualShock.Controller({ config: "dualshock3", index: 0 });
 ~~~~
 
 ## <a name="linux-support"></a> Linux support:

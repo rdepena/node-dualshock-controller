@@ -1,16 +1,15 @@
 'use strict';
 // Module dependencies.
 var dsutilities = require('./utilities'),
-    Smoothing = require('./smoothing'),
-    config = require('./config');
+    Smoothing = require('./smoothing');
 
 //Proccess button events.
 var motionProcessor = function(controller) {
 
     var varianceThreshhold = 1,
-        smoothInput = config.getOptions().accelerometerSmoothing,
+        smoothInput = controller.config.options.accelerometerSmoothing,
         outputSmoothing = new Smoothing(smoothInput),
-        motionInputs = config.getControllerConfig().motionInputs;
+        motionInputs = controller.config.controller.motionInputs;
 
     //generate event name aliases:
     motionInputs.forEach(function(motionAxis) {

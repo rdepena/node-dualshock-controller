@@ -1,91 +1,68 @@
 'use strict';
 
-var assert = require('assert');
+var assert = require('assert'),
+    Config = require('../src/config');
 
 describe('The Config component', function() {
-    var mockConfig = {
-            vendorId: 1556,
-            productId: 616,
-            output: []
-        },
-        mockOptions = {
+    var mockOptions = {
             config: 'dualShock3',
             accelerometerSmoothing: true,
             logging: false
         },
-        instance = [{
-            name: 'setOptions'
-        }, {
-            name: 'getOptions'
-        }, {
-            name: 'setControllerConfig'
-        }, {
-            name: 'getControllerConfig'
-        }],
-        defaultOptionsInstance = [{
+        defaultOptions = [{
             name: 'config'
         }, {
             name: 'accelerometerSmoothing'
         }, {
             name: 'analogStickSmoothing'
-        }],
-        configA,
-        configB;
-
-    beforeEach(function() {
-        configA = require('../src/config');
-        configB = require('../src/config');
-    });
-
+        }];
 
     describe('object instance', function() {
-        it('should have the following shape', function() {
-            instance.forEach(function(method) {
-                assert.equal(typeof configA[method.name], 'function');
+        var config = new Config(mockOptions);
+
+        describe('config property', function () {
+            it('should be present', function () {
+                assert(config.hasOwnProperty('options'), 'missing a "options" property');
+            });
+
+            it('should be an object', function () {
+                assert.equal(typeof config.options, 'object');
+            });
+
+            it('should include all given properties', function () {
+                for (var option in mockOptions) {
+                    assert.equal(config.options[option], mockOptions[option]);
+                }
             });
         });
-    });
 
-    describe('option methods', function() {
-        it('should be able to save options', function() {
-            configA.setOptions(mockOptions);
-            assert.equal(configA.getOptions(), mockOptions);
-        });
+        describe('controller property', function () {
+            it('should be present', function () {
+                assert(config.hasOwnProperty('controller'), 'missing a "controller" property');
+            });
 
-        it('should provide a single object accross instances', function() {
-            configA.setOptions(mockOptions);
-            assert.equal(configA.getOptions(), configB.getOptions());
-        });
-    });
+            it('should be an object', function () {
+                assert.equal(typeof config.controller, 'object');
+            });
 
-    describe('controllerConfig methods', function() {
-        it('should be able to save controllerConfig settings', function() {
-            configA.setControllerConfig(mockConfig);
-            //change the object
-            mockConfig.vendorId = 22;
-            assert.equal(configA.getControllerConfig(), mockConfig);
-        });
-
-        it('should provide a single object accross instances', function() {
-            configA.setControllerConfig(mockConfig);
-            assert.equal(configA.getControllerConfig(), configB.getControllerConfig());
+            it('should reflect a resolved controller config', function () {
+                assert(config.controller.hasOwnProperty('vendorId'));
+                assert(config.controller.hasOwnProperty('productId'));
+            });
         });
     });
 
     describe('default values', function() {
-        beforeEach(function() {
-            configA.setOptions();
-        });
         it('should apply default values', function() {
-            var ops = configA.getOptions();
-            defaultOptionsInstance.forEach(function(property) {
-                assert.notEqual(ops[property.name], void 0);
+            var config = new Config();
+            defaultOptions.forEach(function(property) {
+                assert.notEqual(config.options[property.name], void 0);
             });
         });
         it('should load default config', function() {
-            var controllerConfig = configA.getControllerConfig();
-            assert.notEqual(controllerConfig, null);
-            assert.notEqual(controllerConfig, void 0);
+            var config = new Config();
+            assert.notEqual(config.controller, null);
+            assert.notEqual(config.controller, void 0);
         });
     });
 });

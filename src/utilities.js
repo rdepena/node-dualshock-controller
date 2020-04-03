@@ -1,8 +1,6 @@
 'use strict';
 // Module dependencies.
 
-var config = require('./config');
-
 var unique = function unique(x) {
     var result = [];
     for (var i = 0; i < x.length; i++) {
@@ -19,11 +17,6 @@ module.exports = {
     //reduces noise from the controller
     isWithinVariance: function(x, y, varianceThreshhold) {
         return Math.abs(x - y) > varianceThreshhold;
-    },
-    warn: function(message) {
-        if (config.getOptions().logging) {
-            console.log(message);
-        }
     },
     generateEventPrefixAliases: function(eventPrefix) {
         return unique([
