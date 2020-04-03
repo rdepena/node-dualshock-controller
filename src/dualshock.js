@@ -1,6 +1,7 @@
+'use strict';
+
 // Module dependencies.
-var Controller = require('./controller'),
-    config = require('./config');
+var Controller = require('./controller');
 
 // This is the app entry point.
 //  options you can pass:
@@ -10,13 +11,11 @@ var Controller = require('./controller'),
 //   analogStickSmoothing : true/false, this will activate analog thumb stick smoothing
 //  }
 var dualShock = function(options) {
-    'use strict';
-
-    //set the current options
-    config.setOptions(options);
-
-    //returns the controller.
-    return new Controller();
+    return new Controller(options);
 };
+
+// Since dualShock() simply delegates to `new Controller()`, allow direct use
+// of the latter.
+dualShock.Controller = Controller;
 
 module.exports = dualShock;

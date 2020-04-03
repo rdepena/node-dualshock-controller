@@ -1,16 +1,15 @@
 'use strict';
 // Module dependencies.
 var dsutilities = require('./utilities'),
-    Smoothing = require('./smoothing'),
-    config = require('./config');
+    Smoothing = require('./smoothing');
 
 //Proccess Analog stick events.
 var Analogs = function(controller) {
 
     var varianceThreshhold = 1,
-        smoothInput = config.getOptions().analogStickSmoothing,
+        smoothInput = controller.config.options.analogStickSmoothing,
         outputSmoothing = new Smoothing(smoothInput),
-        analogSticks = config.getControllerConfig().analogSticks;
+        analogSticks = controller.config.controller.analogSticks;
 
     //Private methods
     var processStick = function(analogStick, data) {

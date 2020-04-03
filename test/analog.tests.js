@@ -3,7 +3,7 @@ var Analogs = require('../src/analogs'),
     assert = require('assert'),
     sinon = require('sinon'),
     EventEmitter = require('events').EventEmitter,
-    config = require('../src/config');
+    Config = require('../src/config');
 
 describe('the Analogs component', function() {
     'use strict';
@@ -24,11 +24,9 @@ describe('the Analogs component', function() {
 
     beforeEach(function() {
         emitter = new EventEmitter();
-        config.setOptions({
-            analogStickSmoothing: false
-        });
-        config.setControllerConfig({
-            analogSticks: mockConfig
+        emitter.config = new Config({
+            analogStickSmoothing: false,
+            config: { analogSticks: mockConfig },
         });
         analogs = new Analogs(emitter);
         spy = new sinon.spy();

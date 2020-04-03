@@ -3,7 +3,7 @@ var Buttons = require('../src/buttons'),
     assert = require('assert'),
     sinon = require('sinon'),
     EventEmitter = require('events').EventEmitter,
-    config = require('../src/config');
+    Config = require('../src/config');
 
 describe('the Buttons component', function() {
     'use strict';
@@ -36,8 +36,8 @@ describe('the Buttons component', function() {
 
     beforeEach(function() {
         emitter = new EventEmitter();
-        config.setControllerConfig({
-            buttons: mockConfig
+        emitter.config = new Config({
+            config: { buttons: mockConfig },
         });
         buttons = new Buttons(emitter);
         spy = new sinon.spy();

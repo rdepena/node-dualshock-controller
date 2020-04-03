@@ -1,12 +1,11 @@
 'use strict';
 // Module dependencies.
-var config = require('./config'),
-    dsutilities = require('./utilities');
+var dsutilities = require('./utilities');
 
 //Proccess button events.
 var Buttons = function(controller) {
 
-    var buttons = config.getControllerConfig().buttons;
+    var buttons = controller.config.controller.buttons;
 
     // convert strings to numbers, e.g. "0x01" to 0x01
     // must be converted because JSON doesn't allow numbers with leading zeros

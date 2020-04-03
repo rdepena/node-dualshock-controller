@@ -1,23 +1,25 @@
 // Module dependencies.
 const util = require('util'),
-    dsutilities = require('./utilities'),
+    Config = require('./config'),
+    Logger = require('./logger'),
     Emitter = require('events').EventEmitter,
     Gyro = require('./gyro'),
     Analogs = require('./analogs'),
     Buttons = require('./buttons'),
     Status = require('./status'),
     HID = require('node-hid'),
-    config = require('./config'),
     TouchPad = require('./touchpad');
 
 //generic controller object, it will need a controller Configuration with a buttons array passed into its connect function.
-const Controller = function() {
+const Controller = function(opts) {
     'use strict';
     Emitter.call(this);
 
-    const controllerConfig = config.getControllerConfig(),
-        options = config.getOptions(),
-        indexes = controllerConfig.output.indexes,
+    this.config = new Config(opts);
+
+    const config = this.config,
+        logger = new Logger(config),
+        indexes = config.controller.output.indexes,
         analogs = new Analogs(this),
         buttons = new Buttons(this),
         gyro = new Gyro(this),
@@ -60,7 +62,7 @@ const Controller = function() {
             initialValue: ''
         }]
     }].forEach(function(setup) {
-        const entities = controllerConfig[setup.type],
+        const entities = config.controller[setup.type],
             properties = setup.properties;
 
         if (entities.length) {
@@ -79,37 +81,37 @@ const Controller = function() {
         if (this && this.emit) {
             this.emit('error', ex);
         } else {
-            dsutilities.warn(ex);
+            logger.warn(ex);
             throw (ex);
         }
     };
 
     //process data from HID connected device.
     const processFrame = function(data) {
-        if (controllerConfig.motionInputs) {
+        if (config.controller.motionInputs) {
             gyro.process(data);
         }
-        if (controllerConfig.analogSticks) {
+        if (config.controller.analogSticks) {
             analogs.process(data);
         }
-        if (controllerConfig.buttons) {
+        if (config.controller.buttons) {
             buttons.process(data);
         }
-        if (controllerConfig.status) {
+        if (config.controller.status) {
             status.process(data);
         }
-        if (controllerConfig.touchPad) {
+        if (config.controller.touchPad) {
             touchPad.process(data);
         }
     };
 
     const isController = function(device) {
-        return device.vendorId == controllerConfig.vendorId && device.productId == controllerConfig.productId;
+        return device.vendorId == config.controller.vendorId && device.productId == config.controller.productId;
     };
 
     // Public methods
     this.connect = function() {
-        dsutilities.warn('connect method is deprecated, controller now connects upon declaration.');
+        logger.warn('connect method is deprecated, controller now connects upon declaration.');
     };
 
     this.disconnect = function() {
@@ -117,13 +119,13 @@ const Controller = function() {
             device.close();
         }
         this.emit('disconnecting');
-        dsutilities.warn('node dualshock disconnecting');
+        logger.warn('node dualshock disconnecting');
     };
 
     // Used to set controller rumble and light
     this.setExtras = function(data) {
 
-        let buff = controllerConfig.output.defaultBuffer.slice();
+        let buff = config.controller.output.defaultBuffer.slice();
 
         Object.keys(data).forEach(k => {
             buff[indexes[k]] = data[k];
@@ -132,20 +134,21 @@ const Controller = function() {
     };
 
     //connect to the controller.
-    if (typeof options.device === 'undefined') {
-        dsutilities.warn('node dualshock connecting');
+    if (typeof config.options.device === 'undefined') {
+        logger.warn('node dualshock connecting');
 
-        const deviceMeta = HID.devices()
-            .filter(isController)[0];
+        const deviceMeta = HID.devices().
+            sort((a, b) => a.path.localeCompare(b.path)).
+            filter(isController)[config.options.index || 0];
         if (deviceMeta) {
             device = new HID.HID(deviceMeta.path);
         } else {
-            handleException(new Error(`device with VID:${controllerConfig.vendorId} PID:${controllerConfig.productId} not found`));
+            handleException(new Error(`device with VID:${config.controller.vendorId} PID:${config.controller.productId} not found`));
         }
 
     } else {
         // Allow user-specified device
-        device = options.device;
+        device = config.options.device;
     }
 
     device.on('data', processFrame.bind(this));

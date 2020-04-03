@@ -1,5 +1,3 @@
-const config = require('./config');
-
 function genpBufferFromConf(tpAxis) {
     return {
         name: tpAxis.name,
@@ -12,7 +10,7 @@ function genpBufferFromConf(tpAxis) {
 }
 
 module.exports = function TouchPad(controller) {
-    const touchPad = config.getControllerConfig().touchPad;
+    const touchPad = controller.config.controller.touchPad;
     let pBuffer = {};
 
     function processIsActive(buffer, tpAxis) {

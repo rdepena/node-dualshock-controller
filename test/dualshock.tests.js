@@ -76,7 +76,7 @@ describe('the DualShock component', function() {
 
     before(function() {
         device = new Device();
-        controller = DualShock({
+        controller = new DualShock.Controller({
             config: config,
             device: device
         });

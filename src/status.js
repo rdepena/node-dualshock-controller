@@ -1,13 +1,11 @@
 'use strict';
 // Module dependencies.
 
-var config = require('./config');
-
 //Proccess button events.
 var Status = function(controller) {
 
     var buffer = {},
-        status = config.getControllerConfig().status;
+        status = controller.config.controller.status;
 
     var processControllerStatus = function(category, data) {
         var state;
